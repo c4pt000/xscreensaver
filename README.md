@@ -1,5 +1,7 @@
 # changes to xscreensaver "SBall" screensaver -> "Atomic" added PAM support +RPMS +DEBS for fprintd **WIP (buggy fingerprint)
 
+# requires https://github.com/c4pt000/Validity-sensors-fprint-demo-fingerprint-gui-biometric-fedora
+
 * fedora 34
 
 ```
