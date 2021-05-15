@@ -48,11 +48,13 @@ session    include      system-auth
 ```
 
 cat /etc/pam.d/system-auth
+# dont use fprint here or risk getting locked out of lightdm, gdm
+* use with caution can lock lightdm or gdm unless another tty is opened with crtl-alt-F2->F5
+
 ```
 # Modified system-auth for multi-factor authentication
 
 
-use here with caution can lock lightdm or gdm unless another tty is opened with crtl-alt-F2->F5
 #auth            sufficient      pam_fprint.so
 #auth            sufficient      pam_fprintd.so
 
