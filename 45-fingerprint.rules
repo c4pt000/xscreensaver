@@ -1,8 +1,3 @@
-SUBSYSTEM=="usb_device", ACTION=="add",
-SYSFS{idVendor}=="138a" ,
-SYSFS{idProduct}=="003f",
-SYMLINK+="fingerprint-%k",
-GROUP="fingerprint",
-MODE="666"
-
-KERNEL=="uinput", MODE="0660", GROUP="fingerprint"
+version https://git-lfs.github.com/spec/v1
+oid sha256:a8185d16fd1aa685f7e83318c6b89aea95ee4ec868e611c7d5c8ddc604328d54
+size 203

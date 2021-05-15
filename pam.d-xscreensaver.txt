@@ -1,7 +1,3 @@
-#%PAM-1.0
-auth            sufficient      pam_fprint.so
-auth            sufficient      pam_fprintd.so
-
-
-
-auth          required        pam_unix_auth.so try_first_pass
+version https://git-lfs.github.com/spec/v1
+oid sha256:5052351e3cb8ad341dd56768bbbd6413608ab99d53804727f517d4f133f77fad
+size 168

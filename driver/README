@@ -1,6 +1,3 @@
-
-This directory contains the source for xscreensaver and xscreensaver-command,
-the screensaver driver, and the program for externally controlling it.  Some
-stuff from the ../utils/ directory is used here as well.
-
-If you have compilation problems, check the parameters in ../config.h.
+version https://git-lfs.github.com/spec/v1
+oid sha256:5efba53859f62895d1ca962f59018ee6e234ee35b02ed3ff80a7ceddb0a8637f
+size 285
