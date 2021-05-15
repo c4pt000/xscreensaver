@@ -52,9 +52,9 @@ cat /etc/pam.d/system-auth
 # Modified system-auth for multi-factor authentication
 
 
-
-auth            sufficient      pam_fprint.so
-auth            sufficient      pam_fprintd.so
+use here with caution can lock lightdm or gdm unless another tty is opened with crtl-alt-F2->F5
+#auth            sufficient      pam_fprint.so
+#auth            sufficient      pam_fprintd.so
 
 
 session    required     pam_limits.so
