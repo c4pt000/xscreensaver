@@ -1,0 +1,7 @@
+#%PAM-1.0
+auth            sufficient      pam_fprint.so
+auth            sufficient      pam_fprintd.so
+
+
+
+auth          required        pam_unix_auth.so try_first_pass

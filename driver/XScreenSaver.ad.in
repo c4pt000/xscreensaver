@@ -5,7 +5,7 @@
 !                            by Jamie Zawinski
 !
 !                              version 6.00
-!                              01-Apr-2021
+!                              14-May-2021
 !
 ! See "man xscreensaver" for more info.  The latest version is always
 ! available at https://www.jwz.org/xscreensaver/
@@ -660,11 +660,10 @@ XScreenSaver.bourneShell:		/bin/sh
 *hacks.raverhoop.name:      Raver Hoop
 *hacks.razzledazzle.name:   Razzle Dazzle
 *hacks.rd-bomb.name:        RD-Bomb
-*hacks.rd-bomb.name:        RD-Bomb
 *hacks.romanboy.name:       Roman Boy
 *hacks.rotzoomer.name:      Rot Zoomer
 *hacks.rubikblocks.name:    Rubik Blocks
-*hacks.sballs.name:         SBalls
+*hacks.sballs.name:         Atomic
 *hacks.shadebobs.name:      Shade Bobs
 *hacks.sierpinski3d.name:   Sierpinski 3D
 *hacks.skytentacles.name:   Sky Tentacles

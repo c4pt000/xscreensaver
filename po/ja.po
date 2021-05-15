@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xscreensaver 6.00b2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-22 22:55+0900\n"
+"POT-Creation-Date: 2021-05-14 18:58-0400\n"
 "PO-Revision-Date: 2021-03-23 23:52+0900\n"
 "Last-Translator: Mamoru TASAKA <mtasaka@fedoraproject.org>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "For updates, check https://www.jwz.org/xscreensaver/"
 msgstr "更新情報については http://www.jwz.org/xscreensaver/ を参照して下さい"
 
-#: ../driver/demo-Gtk.c:876 ../driver/dialog.c:1513
+#: ../driver/demo-Gtk.c:876 ../driver/dialog.c:1516
 msgid "OK"
 msgstr "OK"
 
@@ -129,7 +129,6 @@ msgstr ""
 "時刻の書式を解析できません: \"%s\"\n"
 
 #: ../driver/demo-Gtk.c:1791 ../driver/demo-Gtk.c:3403
-#: ../driver/xscreensaver.ui.h:7
 msgid "Any"
 msgstr "任せる"
 
@@ -355,14 +354,14 @@ msgstr ""
 "https://www.jwz.org/xscreensaver/\n"
 "\n"
 
-#: ../driver/dialog.c:965
+#: ../driver/dialog.c:966
 #, c-format
 msgid ""
 "Copyright © 1991-%.4s by\n"
 "Jamie Zawinski <jwz@jwz.org>"
 msgstr ""
 
-#: ../driver/dialog.c:1283
+#: ../driver/dialog.c:1286
 msgid ""
 "Update available!\n"
 "This version is very old.\n"
@@ -370,11 +369,11 @@ msgstr ""
 "パッケージが更新可能です!\n"
 "このバージョンはとても古いです.\n"
 
-#: ../driver/dialog.c:1294
+#: ../driver/dialog.c:1297
 msgid "PRE-RELEASE VERSION"
 msgstr "プレリリースバージョンです"
 
-#: ../driver/dialog.c:1328
+#: ../driver/dialog.c:1331
 msgid ""
 "DEBUG MODE:\n"
 "All keystrokes are being logged to stderr.\n"
@@ -382,64 +381,64 @@ msgstr ""
 "デバッグモードです:\n"
 "キーストロークは、全てエラー出力に表示されます。\n"
 
-#: ../driver/dialog.c:1374
+#: ../driver/dialog.c:1377
 msgid "Username:"
 msgstr "ユーザ名:"
 
-#: ../driver/dialog.c:1402
+#: ../driver/dialog.c:1405
 msgid "Checking..."
 msgstr "確認しています..."
 
-#: ../driver/dialog.c:1479 ../driver/xscreensaver.ui.h:112
+#: ../driver/dialog.c:1482
 msgid "Settings"
 msgstr "設定"
 
-#: ../driver/dialog.c:1489
+#: ../driver/dialog.c:1492
 msgid "Help"
 msgstr "ヘルプ"
 
-#: ../driver/dialog.c:1502
+#: ../driver/dialog.c:1505
 msgid "New Login"
 msgstr "別ユーザに切り替え"
 
-#: ../driver/dialog.c:2440
+#: ../driver/dialog.c:2443
 msgid "Password initialization failed"
 msgstr "パスワード画面の初期化に失敗しました"
 
-#: ../driver/dialog.c:2442
+#: ../driver/dialog.c:2445
 msgid "Authentication failed (Caps Lock?)"
 msgstr "認証に失敗しました（Caps Lock?）"
 
-#: ../driver/dialog.c:2444
+#: ../driver/dialog.c:2447
 msgid "Authentication failed!"
 msgstr "認証に失敗しました!"
 
-#: ../driver/dialog.c:2464
+#: ../driver/dialog.c:2467
 #, c-format
 msgid "%d days ago"
 msgstr "%d 日前でした"
 
-#: ../driver/dialog.c:2465
+#: ../driver/dialog.c:2468
 #, c-format
 msgid "%d hours ago"
 msgstr "%d 時間前でした"
 
-#: ../driver/dialog.c:2466
+#: ../driver/dialog.c:2469
 #, c-format
 msgid "%d minutes ago"
 msgstr "%d 分前でした"
 
-#: ../driver/dialog.c:2467
+#: ../driver/dialog.c:2470
 #, c-format
 msgid "just now"
 msgstr "今さっきでした"
 
-#: ../driver/dialog.c:2470
+#: ../driver/dialog.c:2473
 #, c-format
 msgid "There has been 1 failed login attempt, %s."
 msgstr "過去1回認証に失敗しました. %s."
 
-#: ../driver/dialog.c:2473
+#: ../driver/dialog.c:2476
 #, c-format
 msgid "There have been %d failed login attempts, oldest %s."
 msgstr "過去%d回認証に失敗しました.一番古い失敗は%s."
@@ -452,505 +451,28 @@ msgstr "スクリーンセーバー"
 msgid "Change screensaver properties"
 msgstr "スクリーンセーバーの設定を変更する"
 
-#: ../driver/subprocs.c:571
+#: ../driver/subprocs.c:573
 #, c-format
 msgid "crashed with status %d"
 msgstr "はステータス%d で異常終了しました"
 
 #. Expected notification after we killed it.
-#: ../driver/subprocs.c:588
+#: ../driver/subprocs.c:590
 #, c-format
 msgid "exited normally with %.100s"
 msgstr "%.100s で正常に終了しました"
 
 #. Unexpected signal.
-#: ../driver/subprocs.c:597
+#: ../driver/subprocs.c:599
 #, c-format
 msgid "crashed with %.100s"
 msgstr "%.100s でクラッシュしました"
 
 #. Didn't exit, signal or stop; is this even possible?
-#: ../driver/subprocs.c:618
+#: ../driver/subprocs.c:620
 #, c-format
 msgid "crashed mysteriously"
 msgstr "不明な原因でクラッシュしました"
-
-#: ../driver/xscreensaver.ui.h:1
-msgid "Disable Screen Saver"
-msgstr "スクリーンセーバーを無効にする"
-
-#: ../driver/xscreensaver.ui.h:2
-msgid "Blank Screen Only"
-msgstr "ブランク・スクリーンのみ"
-
-#: ../driver/xscreensaver.ui.h:3
-msgid "Only One Screen Saver"
-msgstr "一つのスクリーンセーバーのみ"
-
-#: ../driver/xscreensaver.ui.h:4
-msgid "Random Screen Saver"
-msgstr "ランダムなスクリーンセーバー"
-
-#: ../driver/xscreensaver.ui.h:5
-msgid "Same Random Savers"
-msgstr "同じランダムなセーバ"
-
-#: ../driver/xscreensaver.ui.h:6
-msgid "Default"
-msgstr "デフォルト"
-
-#: ../driver/xscreensaver.ui.h:8
-msgid "Best"
-msgstr "最適"
-
-#: ../driver/xscreensaver.ui.h:9
-msgid "Default-N"
-msgstr "デフォルト-N"
-
-#: ../driver/xscreensaver.ui.h:10
-msgid "GL"
-msgstr "GL"
-
-#: ../driver/xscreensaver.ui.h:11
-msgid "TrueColor"
-msgstr "TrueColor"
-
-#: ../driver/xscreensaver.ui.h:12
-msgid "PseudoColor"
-msgstr "PseudoColor"
-
-#: ../driver/xscreensaver.ui.h:13
-msgid "StaticGray"
-msgstr "StaticGray"
-
-#: ../driver/xscreensaver.ui.h:14
-msgid "GrayScale"
-msgstr "グレースケール"
-
-#: ../driver/xscreensaver.ui.h:15
-msgid "DirectColor"
-msgstr "DirectColor"
-
-#: ../driver/xscreensaver.ui.h:16
-msgid "Color"
-msgstr "色"
-
-#: ../driver/xscreensaver.ui.h:17
-msgid "Gray"
-msgstr "グレー"
-
-#: ../driver/xscreensaver.ui.h:18 ../hacks/config/razzledazzle.xml.h:8
-#: ../hacks/config/scooter.xml.h:14
-msgid "Mono"
-msgstr "単色"
-
-#: ../driver/xscreensaver.ui.h:19
-msgid "_File"
-msgstr "ファイル(_F)"
-
-#: ../driver/xscreensaver.ui.h:20
-msgid "_Blank Screen Now"
-msgstr "XScreenSaver の起動(_B)"
-
-#: ../driver/xscreensaver.ui.h:21
-msgid "_Lock Screen Now"
-msgstr "画面のロック(_L)"
-
-#: ../driver/xscreensaver.ui.h:22
-msgid "_Kill Daemon"
-msgstr "デーモンの強制終了(_K)"
-
-#: ../driver/xscreensaver.ui.h:23
-msgid "_Restart Daemon"
-msgstr "デーモンの再起動(_R)"
-
-#: ../driver/xscreensaver.ui.h:24
-msgid "_Quit"
-msgstr "終了(_Q)"
-
-#: ../driver/xscreensaver.ui.h:25
-msgid "_Help"
-msgstr "ヘルプ(_H)"
-
-#: ../driver/xscreensaver.ui.h:26
-msgid "_About..."
-msgstr "情報(_A)..."
-
-#: ../driver/xscreensaver.ui.h:27
-msgid "_Documentation..."
-msgstr "ドキュメント(_D)..."
-
-#: ../driver/xscreensaver.ui.h:28
-msgid "XScreenSaver"
-msgstr "XScreenSaver"
-
-#: ../driver/xscreensaver.ui.h:29
-msgid "_Cycle After"
-msgstr "セーバーの周期(_C)"
-
-#: ../driver/xscreensaver.ui.h:30
-msgid "Whether a password should be required to un-blank the screen."
-msgstr ""
-"画面をブランクした後、しばらくして自動的にロックしたい時は、これを選択して下"
-"さい。"
-
-#: ../driver/xscreensaver.ui.h:31
-msgid "_Lock Screen After  "
-msgstr "画面をロックするまで(_L): "
-
-#: ../driver/xscreensaver.ui.h:32
-msgid "Lock Screen"
-msgstr "画面をロックする"
-
-#: ../driver/xscreensaver.ui.h:33
-msgid "How long before the screen saver activates."
-msgstr "セーバーが起動するまでの時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:34
-msgid "How long after the screen blanks until a password will be required."
-msgstr "画面がブランクになってからロックするまでの時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:35
-msgid "Lock Screen After"
-msgstr "画面をロックするまで"
-
-#: ../driver/xscreensaver.ui.h:36
-msgid ""
-"How long each display mode should run before choosing a new one (in Random "
-"mode.)"
-msgstr ""
-"ランダムなセーバーモードの時、次のセーバーに移るまでの時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:37
-msgid "minutes"
-msgstr "分"
-
-#: ../driver/xscreensaver.ui.h:38
-msgid "_Blank After"
-msgstr "ブランクになるまで(_B)"
-
-#: ../driver/xscreensaver.ui.h:39
-msgid ""
-"Demo the selected screen saver in full-screen mode (click the mouse to "
-"return.)"
-msgstr ""
-"指定したスクリーンセーバーを全画面モードでデモします (解除する場合はマウスを"
-"クリックして下さい)。"
-
-#: ../driver/xscreensaver.ui.h:40
-msgid "_Preview"
-msgstr "プレビュー(_P)"
-
-#: ../driver/xscreensaver.ui.h:41
-msgid "Customization and explanation of the selected screen saver."
-msgstr "指定したスクリーンセーバーの紹介とそのカスタマイズです。"
-
-#: ../driver/xscreensaver.ui.h:42
-msgid "_Settings..."
-msgstr "設定(_S)"
-
-#: ../driver/xscreensaver.ui.h:43
-msgid "_Mode:"
-msgstr "モード(_M):"
-
-#: ../driver/xscreensaver.ui.h:44
-msgid ""
-"Run the next screen saver in the list in full-screen mode (click the mouse "
-"to return.)"
-msgstr ""
-"一つ次のスクリーンセーバーを全画面モードで起動します (解除する場合はマウスを"
-"クリックして下さい)。"
-
-#: ../driver/xscreensaver.ui.h:45
-msgid ""
-"Run the previous screen saver in the list in full-screen mode (click the "
-"mouse to return.)"
-msgstr ""
-"一つ前のスクリーンセーバーを全画面モードで起動します (解除する場合はマウスを"
-"クリックして下さい)。"
-
-#: ../driver/xscreensaver.ui.h:46
-msgid "preview"
-msgstr "プレビュー"
-
-#: ../driver/xscreensaver.ui.h:47
-msgid ""
-"No Preview\n"
-"Available"
-msgstr "プレビューを利用できません"
-
-#: ../driver/xscreensaver.ui.h:49
-msgid "no preview"
-msgstr "プレビューを利用出来ません"
-
-#: ../driver/xscreensaver.ui.h:50
-msgid ""
-"Not\n"
-"Installed"
-msgstr "インストールされていません"
-
-#: ../driver/xscreensaver.ui.h:52
-msgid "not installed"
-msgstr "インストールされていません"
-
-#: ../driver/xscreensaver.ui.h:53
-msgid ""
-"Very few (or no) screen savers appear to be available.\n"
-"\n"
-"This probably means that the \"xscreensaver-extras\" and\n"
-"\"xscreensaver-gl-extras\" packages are not installed."
-msgstr ""
-"セーバーの数が少ない、若しくは全く無いようです。\n"
-"これは、恐らく\"xscreensaver-extras\"、あるいは\n"
-"\"xscreensaver-gl-extras\"のパッケージがインストールされていない\n"
-"ためだと思われます。"
-
-#: ../driver/xscreensaver.ui.h:57
-msgid "nothing"
-msgstr ""
-
-#: ../driver/xscreensaver.ui.h:58
-msgid "Description"
-msgstr "説明"
-
-#: ../driver/xscreensaver.ui.h:59
-msgid "_Display Modes"
-msgstr "表示モード(_D)"
-
-#: ../driver/xscreensaver.ui.h:60
-msgid ""
-"Whether the image-manipulating modes should be allowed to operate on an "
-"image of your desktop."
-msgstr "画像の操作モードで、デスクトップの画像を使うかどうかを選択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:61
-msgid "Grab Desktop _Images"
-msgstr "デスクトップ画像を用いる(_I)"
-
-#: ../driver/xscreensaver.ui.h:62
-msgid ""
-"Whether the image-manipulating modes should operate on images captured from "
-"the system's video input (if there is one.)"
-msgstr ""
-"画像の操作モードで (可能な時) ビデオ入力の画像を使うかどうかを選択して下さ"
-"い。"
-
-#: ../driver/xscreensaver.ui.h:63
-msgid "Grab _Video Frames"
-msgstr "ビデオ入力を用いる(_V)"
-
-#: ../driver/xscreensaver.ui.h:64
-msgid "Whether the image-manipulating modes should load image files."
-msgstr "画像の操作モードで、画像ファイルをを取得するかどうかを選択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:65
-msgid "Choose _Random Image:"
-msgstr "画像をランダムに選択する(_R):"
-
-#: ../driver/xscreensaver.ui.h:66
-msgid ""
-"The local directory, RSS feed or Atom feed from which images will be "
-"randomly chosen."
-msgstr ""
-"ランダムに取得する画像が格納されているローカルのディレクトリや、RSSフィード、"
-"またはAtomフィードのURLを選択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:67
-msgid "_Browse"
-msgstr "参照(_B)"
-
-#: ../driver/xscreensaver.ui.h:68
-msgid "Local directory, or RSS feed URL."
-msgstr "ローカルのディレクトリや、RSSフィードのURL."
-
-#: ../driver/xscreensaver.ui.h:69
-msgid "Image Manipulation"
-msgstr "画像の操作"
-
-#: ../driver/xscreensaver.ui.h:70
-msgid "Text-displaying modes will display the text typed here."
-msgstr "（テキストを表示するセーバの時は）次の文字列が出力されます。"
-
-#: ../driver/xscreensaver.ui.h:71
-msgid "_Text"
-msgstr "文字列(_T)"
-
-#: ../driver/xscreensaver.ui.h:72
-msgid "Text-displaying modes will display the contents of this file."
-msgstr ""
-"（テキストを表示するセーバの時は）次のテキストファイルの内容が表示されます。"
-
-#: ../driver/xscreensaver.ui.h:73
-msgid "Text _file"
-msgstr "ファイル(_f)"
-
-#: ../driver/xscreensaver.ui.h:74
-msgid "Text-displaying modes will display the output of this program."
-msgstr ""
-"（テキストを表示するセーバの時は）次のプログラムの出力結果が表示されます。"
-
-#: ../driver/xscreensaver.ui.h:75
-msgid "_Program"
-msgstr "プログラム(_P)"
-
-#: ../driver/xscreensaver.ui.h:76
-msgid ""
-"Text-displaying modes will display the contents of this URL (HTML or RSS)."
-msgstr ""
-"（テキストを表示するセーバの時）次のURLの内容が表示されます。HTMLかRSSで書か"
-"れている必要があります。"
-
-#: ../driver/xscreensaver.ui.h:77
-msgid "_URL"
-msgstr "_URL"
-
-#: ../driver/xscreensaver.ui.h:78
-msgid "Text-displaying modes will display the local host name, date, and time."
-msgstr "（テキストを表示するセーバの時は）ホスト名と、日時が表示されます。"
-
-#: ../driver/xscreensaver.ui.h:79
-msgid "_Host Name and Time"
-msgstr "ホスト名と日時(_H)"
-
-#: ../driver/xscreensaver.ui.h:80
-msgid "Text Manipulation"
-msgstr "表示するテキストの設定"
-
-#: ../driver/xscreensaver.ui.h:81
-msgid "Whether the monitor should be powered down after a while."
-msgstr "モニタの電源管理を設定するかを選択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:82
-msgid "_Power Management Enabled"
-msgstr "電源管理を有効にする(_P)"
-
-#: ../driver/xscreensaver.ui.h:83
-msgid "Stand_by After"
-msgstr "スタンバイまで(_b)"
-
-#: ../driver/xscreensaver.ui.h:84
-msgid "Sus_pend After"
-msgstr "サスペンドまで(_p)"
-
-#: ../driver/xscreensaver.ui.h:85
-msgid "_Off After"
-msgstr "電源OFFまで(_O)"
-
-#: ../driver/xscreensaver.ui.h:86
-msgid "How long until the monitor powers down."
-msgstr "モニタの電源を OFF にするまでの時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:87
-msgid "How long until the monitor goes into power-saving mode."
-msgstr "パワーセービング・モードに移行するまでの時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:88
-msgid "How long until the monitor goes completely black."
-msgstr "モニターがスタンドバイになるまでの時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:89
-msgid ""
-"Whether the monitor should be powered off immediately in \"Blank Screen Only"
-"\" mode, regardless of the above power-management timeouts."
-msgstr ""
-"ブランク・スクリーンのみのモードの時、上の電源管理の時間設定にもかかわらずに"
-"直ちにモニターの電源を切るかを選択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:90
-msgid "_Quick Power-off in Blank Only Mode"
-msgstr "ブランクモードの時直ちに電源を切る(_Q)"
-
-#: ../driver/xscreensaver.ui.h:91
-msgid "Display Power Management"
-msgstr "モニタのパワーマネージメント"
-
-#: ../driver/xscreensaver.ui.h:92
-msgid ""
-"Whether the screen should slowly fade to black when the screen saver "
-"activates."
-msgstr ""
-"スクリーンセーバーを起動する時、スクリーンをゆっくりとフェードインするかどう"
-"かを選択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:93
-msgid "Fade to Black when _Blanking"
-msgstr "ブランクにする時にフェードイン(_B)"
-
-#: ../driver/xscreensaver.ui.h:94
-msgid ""
-"Whether the screen should slowly fade in from black when the screen saver "
-"deactivates."
-msgstr ""
-"画面を再び明るくする時、スクリーンをゆっくりとフェードアウトするかどうかを選"
-"択して下さい。"
-
-#: ../driver/xscreensaver.ui.h:95
-msgid "Fade from Black When _Unblanking"
-msgstr "明るくする時フェードアウト(_U)"
-
-#: ../driver/xscreensaver.ui.h:96
-msgid "F_ade Duration"
-msgstr "フェードする時間(_a)"
-
-#: ../driver/xscreensaver.ui.h:97
-msgid "How long it should take for the screen to fade in and out."
-msgstr "スクリーンをフェードイン/アウトする時間を指定して下さい。"
-
-#: ../driver/xscreensaver.ui.h:98
-msgid "seconds"
-msgstr "秒間"
-
-#: ../driver/xscreensaver.ui.h:99
-msgid "_Theme:"
-msgstr "テーマ(_T):"
-
-#: ../driver/xscreensaver.ui.h:100
-msgid "The color scheme to use on the unlock dialog."
-msgstr "パスワード画面で使うカラースキームを設定してください."
-
-#: ../driver/xscreensaver.ui.h:101
-msgid "Show the what the unlock dialog will look like."
-msgstr "実際どのように見えるかを表示します."
-
-#: ../driver/xscreensaver.ui.h:102
-msgid "Blanking"
-msgstr "ブランク・スクリーン"
-
-#: ../driver/xscreensaver.ui.h:103
-msgid "_Advanced"
-msgstr "拡張オプション(_A)"
-
-#: ../driver/xscreensaver.ui.h:104
-msgid "dialog1"
-msgstr "ダイアログ1"
-
-#: ../driver/xscreensaver.ui.h:105
-msgid "_Advanced >>"
-msgstr "拡張オプション(_A)>>"
-
-#: ../driver/xscreensaver.ui.h:106
-msgid "_Standard <<"
-msgstr "標準オプション(_S)<<"
-
-#: ../driver/xscreensaver.ui.h:107
-msgid "_Reset to Defaults"
-msgstr "デフォルトに戻す(_R)"
-
-#: ../driver/xscreensaver.ui.h:108
-msgid "Standard"
-msgstr "標準"
-
-#: ../driver/xscreensaver.ui.h:109
-msgid "_Command Line:"
-msgstr "コマンド(_C):"
-
-#: ../driver/xscreensaver.ui.h:110
-msgid "_Visual:"
-msgstr "ビジュアル(_V):"
-
-#: ../driver/xscreensaver.ui.h:111
-msgid "Advanced"
-msgstr "拡張オプション"
 
 #: ../hacks/config/abstractile.xml.h:1
 msgid "Abstractile"
@@ -1248,7 +770,7 @@ msgstr ""
 #: ../hacks/config/rocks.xml.h:17 ../hacks/config/romanboy.xml.h:43
 #: ../hacks/config/rorschach.xml.h:11 ../hacks/config/rotor.xml.h:13
 #: ../hacks/config/rotzoomer.xml.h:15 ../hacks/config/rubik.xml.h:11
-#: ../hacks/config/rubikblocks.xml.h:20 ../hacks/config/sballs.xml.h:16
+#: ../hacks/config/rubikblocks.xml.h:20 ../hacks/config/sballs.xml.h:8
 #: ../hacks/config/scooter.xml.h:17 ../hacks/config/shadebobs.xml.h:16
 #: ../hacks/config/sierpinski.xml.h:13 ../hacks/config/sierpinski3d.xml.h:10
 #: ../hacks/config/skytentacles.xml.h:25 ../hacks/config/slidescreen.xml.h:18
@@ -2321,7 +1843,7 @@ msgstr ""
 #: ../hacks/config/pinion.xml.h:15 ../hacks/config/pipes.xml.h:21
 #: ../hacks/config/polyhedra.xml.h:166 ../hacks/config/providence.xml.h:6
 #: ../hacks/config/queens.xml.h:5 ../hacks/config/rubikblocks.xml.h:19
-#: ../hacks/config/sballs.xml.h:15 ../hacks/config/sierpinski3d.xml.h:9
+#: ../hacks/config/sballs.xml.h:7 ../hacks/config/sierpinski3d.xml.h:9
 #: ../hacks/config/speedmine.xml.h:16 ../hacks/config/spheremonics.xml.h:21
 #: ../hacks/config/splitflap.xml.h:24 ../hacks/config/sproingies.xml.h:8
 #: ../hacks/config/stonerview.xml.h:5 ../hacks/config/superquadrics.xml.h:12
@@ -2487,7 +2009,7 @@ msgstr ""
 #: ../hacks/config/atunnel.xml.h:5 ../hacks/config/blocktube.xml.h:9
 #: ../hacks/config/cubenetic.xml.h:24 ../hacks/config/gibson.xml.h:13
 #: ../hacks/config/glmatrix.xml.h:18 ../hacks/config/lament.xml.h:5
-#: ../hacks/config/sballs.xml.h:14
+#: ../hacks/config/sballs.xml.h:6
 msgid "Textured"
 msgstr ""
 
@@ -3120,8 +2642,7 @@ msgid "Transparent bubbles"
 msgstr ""
 
 #: ../hacks/config/bubble3d.xml.h:6 ../hacks/config/flurry.xml.h:10
-#: ../hacks/config/rotzoomer.xml.h:9 ../hacks/config/sballs.xml.h:5
-#: ../hacks/config/starfish.xml.h:2
+#: ../hacks/config/rotzoomer.xml.h:9 ../hacks/config/starfish.xml.h:2
 msgid "Random"
 msgstr ""
 
@@ -6723,7 +6244,7 @@ msgid "Sphere"
 msgstr ""
 
 #: ../hacks/config/jigglypuff.xml.h:8 ../hacks/config/morph3d.xml.h:6
-#: ../hacks/config/polyhedra.xml.h:22 ../hacks/config/sballs.xml.h:6
+#: ../hacks/config/polyhedra.xml.h:22
 msgid "Tetrahedron"
 msgstr ""
 
@@ -7615,22 +7136,19 @@ msgid "Morph 3D"
 msgstr ""
 
 #: ../hacks/config/morph3d.xml.h:7 ../hacks/config/polyhedra.xml.h:30
-#: ../hacks/config/sballs.xml.h:7
 msgid "Cube"
 msgstr ""
 
 #: ../hacks/config/morph3d.xml.h:8 ../hacks/config/polyhedra.xml.h:29
-#: ../hacks/config/sballs.xml.h:8
 msgid "Octahedron"
 msgstr ""
 
 #: ../hacks/config/morph3d.xml.h:9 ../hacks/config/polyhedra.xml.h:62
-#: ../hacks/config/sballs.xml.h:9
 msgid "Dodecahedron"
 msgstr ""
 
 #: ../hacks/config/morph3d.xml.h:10 ../hacks/config/polyhedra.xml.h:61
-#: ../hacks/config/sballs.xml.h:10
+#: ../hacks/config/sballs.xml.h:5
 msgid "Icosahedron"
 msgstr ""
 
@@ -9103,6 +8621,10 @@ msgstr ""
 msgid "Razzle Dazzle"
 msgstr ""
 
+#: ../hacks/config/razzledazzle.xml.h:8 ../hacks/config/scooter.xml.h:14
+msgid "Mono"
+msgstr "単色"
+
 #: ../hacks/config/razzledazzle.xml.h:17
 #, fuzzy
 msgid "Ship Outlines"
@@ -9374,22 +8896,10 @@ msgid ""
 msgstr ""
 
 #: ../hacks/config/sballs.xml.h:1
-msgid "SBalls"
+msgid "Atomic"
 msgstr ""
 
-#: ../hacks/config/sballs.xml.h:11
-msgid "Plane"
-msgstr ""
-
-#: ../hacks/config/sballs.xml.h:12
-msgid "Pyramid"
-msgstr ""
-
-#: ../hacks/config/sballs.xml.h:13
-msgid "Star"
-msgstr ""
-
-#: ../hacks/config/sballs.xml.h:17
+#: ../hacks/config/sballs.xml.h:9
 msgid "Textured balls spinning like crazy. Written by Eric Lassauge; 2002."
 msgstr ""
 
@@ -10484,12 +9994,7 @@ msgstr ""
 msgid "2 seconds"
 msgstr "2秒間"
 
-#.
-#. <string id="filter"  _label="Per-image filter program" arg="-filter %"/>
-#. <string id="filter2" _label="Overall filter program" arg="-filter2 %"/>
-#. <file id="dictionary" _label="Dictionary file" arg="-dictionary %"/>
-#.
-#: ../hacks/config/vidwhacker.xml.h:5 ../hacks/config/webcollage.xml.h:17
+#: ../hacks/config/vidwhacker.xml.h:5
 msgid "Image directory"
 msgstr "画像のディレクトリ"
 
@@ -10596,7 +10101,7 @@ msgstr ""
 msgid "Image opacity"
 msgstr ""
 
-#: ../hacks/config/webcollage.xml.h:18
+#: ../hacks/config/webcollage.xml.h:12
 msgid ""
 "This is what the Internet looks like. This creates collages out of random "
 "images from the World Wide Web. It finds the images by feeding random words "
@@ -10604,10 +10109,8 @@ msgid ""
 "of the pages returned. WARNING: THE INTERNET SOMETIMES CONTAINS PORNOGRAPHY. "
 "The Internet being what it is, absolutely anything might show up in the "
 "collage including -- quite possibly -- pornography, or even nudity. Please "
-"act accordingly. See also https://www.jwz.org/webcollage/ NOTE: Webcollage "
-"on Fedora does not connect to internet by default and uses image files on "
-"your local disk. If you want webcollage to search for image files on net, "
-"use webcollage.original . Written by Jamie Zawinski; 1999."
+"act accordingly. See also https://www.jwz.org/webcollage/ Written by Jamie "
+"Zawinski; 1999."
 msgstr ""
 
 #: ../hacks/config/whirlwindwarp.xml.h:1
@@ -10971,6 +10474,376 @@ msgid ""
 "lenses rather than just a simple zoom. Written by James Macnicol; 2001."
 msgstr ""
 
+#~ msgid "Disable Screen Saver"
+#~ msgstr "スクリーンセーバーを無効にする"
+
+#~ msgid "Blank Screen Only"
+#~ msgstr "ブランク・スクリーンのみ"
+
+#~ msgid "Only One Screen Saver"
+#~ msgstr "一つのスクリーンセーバーのみ"
+
+#~ msgid "Random Screen Saver"
+#~ msgstr "ランダムなスクリーンセーバー"
+
+#~ msgid "Same Random Savers"
+#~ msgstr "同じランダムなセーバ"
+
+#~ msgid "Default"
+#~ msgstr "デフォルト"
+
+#~ msgid "Best"
+#~ msgstr "最適"
+
+#~ msgid "Default-N"
+#~ msgstr "デフォルト-N"
+
+#~ msgid "GL"
+#~ msgstr "GL"
+
+#~ msgid "TrueColor"
+#~ msgstr "TrueColor"
+
+#~ msgid "PseudoColor"
+#~ msgstr "PseudoColor"
+
+#~ msgid "StaticGray"
+#~ msgstr "StaticGray"
+
+#~ msgid "GrayScale"
+#~ msgstr "グレースケール"
+
+#~ msgid "DirectColor"
+#~ msgstr "DirectColor"
+
+#~ msgid "Color"
+#~ msgstr "色"
+
+#~ msgid "Gray"
+#~ msgstr "グレー"
+
+#~ msgid "_File"
+#~ msgstr "ファイル(_F)"
+
+#~ msgid "_Blank Screen Now"
+#~ msgstr "XScreenSaver の起動(_B)"
+
+#~ msgid "_Lock Screen Now"
+#~ msgstr "画面のロック(_L)"
+
+#~ msgid "_Kill Daemon"
+#~ msgstr "デーモンの強制終了(_K)"
+
+#~ msgid "_Restart Daemon"
+#~ msgstr "デーモンの再起動(_R)"
+
+#~ msgid "_Quit"
+#~ msgstr "終了(_Q)"
+
+#~ msgid "_Help"
+#~ msgstr "ヘルプ(_H)"
+
+#~ msgid "_About..."
+#~ msgstr "情報(_A)..."
+
+#~ msgid "_Documentation..."
+#~ msgstr "ドキュメント(_D)..."
+
+#~ msgid "XScreenSaver"
+#~ msgstr "XScreenSaver"
+
+#~ msgid "_Cycle After"
+#~ msgstr "セーバーの周期(_C)"
+
+#~ msgid "Whether a password should be required to un-blank the screen."
+#~ msgstr ""
+#~ "画面をブランクした後、しばらくして自動的にロックしたい時は、これを選択して"
+#~ "下さい。"
+
+#~ msgid "_Lock Screen After  "
+#~ msgstr "画面をロックするまで(_L): "
+
+#~ msgid "Lock Screen"
+#~ msgstr "画面をロックする"
+
+#~ msgid "How long before the screen saver activates."
+#~ msgstr "セーバーが起動するまでの時間を指定して下さい。"
+
+#~ msgid "How long after the screen blanks until a password will be required."
+#~ msgstr "画面がブランクになってからロックするまでの時間を指定して下さい。"
+
+#~ msgid "Lock Screen After"
+#~ msgstr "画面をロックするまで"
+
+#~ msgid ""
+#~ "How long each display mode should run before choosing a new one (in "
+#~ "Random mode.)"
+#~ msgstr ""
+#~ "ランダムなセーバーモードの時、次のセーバーに移るまでの時間を指定して下さ"
+#~ "い。"
+
+#~ msgid "minutes"
+#~ msgstr "分"
+
+#~ msgid "_Blank After"
+#~ msgstr "ブランクになるまで(_B)"
+
+#~ msgid ""
+#~ "Demo the selected screen saver in full-screen mode (click the mouse to "
+#~ "return.)"
+#~ msgstr ""
+#~ "指定したスクリーンセーバーを全画面モードでデモします (解除する場合はマウス"
+#~ "をクリックして下さい)。"
+
+#~ msgid "_Preview"
+#~ msgstr "プレビュー(_P)"
+
+#~ msgid "Customization and explanation of the selected screen saver."
+#~ msgstr "指定したスクリーンセーバーの紹介とそのカスタマイズです。"
+
+#~ msgid "_Settings..."
+#~ msgstr "設定(_S)"
+
+#~ msgid "_Mode:"
+#~ msgstr "モード(_M):"
+
+#~ msgid ""
+#~ "Run the next screen saver in the list in full-screen mode (click the "
+#~ "mouse to return.)"
+#~ msgstr ""
+#~ "一つ次のスクリーンセーバーを全画面モードで起動します (解除する場合はマウス"
+#~ "をクリックして下さい)。"
+
+#~ msgid ""
+#~ "Run the previous screen saver in the list in full-screen mode (click the "
+#~ "mouse to return.)"
+#~ msgstr ""
+#~ "一つ前のスクリーンセーバーを全画面モードで起動します (解除する場合はマウス"
+#~ "をクリックして下さい)。"
+
+#~ msgid "preview"
+#~ msgstr "プレビュー"
+
+#~ msgid ""
+#~ "No Preview\n"
+#~ "Available"
+#~ msgstr "プレビューを利用できません"
+
+#~ msgid "no preview"
+#~ msgstr "プレビューを利用出来ません"
+
+#~ msgid ""
+#~ "Not\n"
+#~ "Installed"
+#~ msgstr "インストールされていません"
+
+#~ msgid "not installed"
+#~ msgstr "インストールされていません"
+
+#~ msgid ""
+#~ "Very few (or no) screen savers appear to be available.\n"
+#~ "\n"
+#~ "This probably means that the \"xscreensaver-extras\" and\n"
+#~ "\"xscreensaver-gl-extras\" packages are not installed."
+#~ msgstr ""
+#~ "セーバーの数が少ない、若しくは全く無いようです。\n"
+#~ "これは、恐らく\"xscreensaver-extras\"、あるいは\n"
+#~ "\"xscreensaver-gl-extras\"のパッケージがインストールされていない\n"
+#~ "ためだと思われます。"
+
+#~ msgid "Description"
+#~ msgstr "説明"
+
+#~ msgid "_Display Modes"
+#~ msgstr "表示モード(_D)"
+
+#~ msgid ""
+#~ "Whether the image-manipulating modes should be allowed to operate on an "
+#~ "image of your desktop."
+#~ msgstr ""
+#~ "画像の操作モードで、デスクトップの画像を使うかどうかを選択して下さい。"
+
+#~ msgid "Grab Desktop _Images"
+#~ msgstr "デスクトップ画像を用いる(_I)"
+
+#~ msgid ""
+#~ "Whether the image-manipulating modes should operate on images captured "
+#~ "from the system's video input (if there is one.)"
+#~ msgstr ""
+#~ "画像の操作モードで (可能な時) ビデオ入力の画像を使うかどうかを選択して下さ"
+#~ "い。"
+
+#~ msgid "Grab _Video Frames"
+#~ msgstr "ビデオ入力を用いる(_V)"
+
+#~ msgid "Whether the image-manipulating modes should load image files."
+#~ msgstr ""
+#~ "画像の操作モードで、画像ファイルをを取得するかどうかを選択して下さい。"
+
+#~ msgid "Choose _Random Image:"
+#~ msgstr "画像をランダムに選択する(_R):"
+
+#~ msgid ""
+#~ "The local directory, RSS feed or Atom feed from which images will be "
+#~ "randomly chosen."
+#~ msgstr ""
+#~ "ランダムに取得する画像が格納されているローカルのディレクトリや、RSSフィー"
+#~ "ド、またはAtomフィードのURLを選択して下さい。"
+
+#~ msgid "_Browse"
+#~ msgstr "参照(_B)"
+
+#~ msgid "Local directory, or RSS feed URL."
+#~ msgstr "ローカルのディレクトリや、RSSフィードのURL."
+
+#~ msgid "Image Manipulation"
+#~ msgstr "画像の操作"
+
+#~ msgid "Text-displaying modes will display the text typed here."
+#~ msgstr "（テキストを表示するセーバの時は）次の文字列が出力されます。"
+
+#~ msgid "_Text"
+#~ msgstr "文字列(_T)"
+
+#~ msgid "Text-displaying modes will display the contents of this file."
+#~ msgstr ""
+#~ "（テキストを表示するセーバの時は）次のテキストファイルの内容が表示されま"
+#~ "す。"
+
+#~ msgid "Text _file"
+#~ msgstr "ファイル(_f)"
+
+#~ msgid "Text-displaying modes will display the output of this program."
+#~ msgstr ""
+#~ "（テキストを表示するセーバの時は）次のプログラムの出力結果が表示されます。"
+
+#~ msgid "_Program"
+#~ msgstr "プログラム(_P)"
+
+#~ msgid ""
+#~ "Text-displaying modes will display the contents of this URL (HTML or RSS)."
+#~ msgstr ""
+#~ "（テキストを表示するセーバの時）次のURLの内容が表示されます。HTMLかRSSで書"
+#~ "かれている必要があります。"
+
+#~ msgid "_URL"
+#~ msgstr "_URL"
+
+#~ msgid ""
+#~ "Text-displaying modes will display the local host name, date, and time."
+#~ msgstr "（テキストを表示するセーバの時は）ホスト名と、日時が表示されます。"
+
+#~ msgid "_Host Name and Time"
+#~ msgstr "ホスト名と日時(_H)"
+
+#~ msgid "Text Manipulation"
+#~ msgstr "表示するテキストの設定"
+
+#~ msgid "Whether the monitor should be powered down after a while."
+#~ msgstr "モニタの電源管理を設定するかを選択して下さい。"
+
+#~ msgid "_Power Management Enabled"
+#~ msgstr "電源管理を有効にする(_P)"
+
+#~ msgid "Stand_by After"
+#~ msgstr "スタンバイまで(_b)"
+
+#~ msgid "Sus_pend After"
+#~ msgstr "サスペンドまで(_p)"
+
+#~ msgid "_Off After"
+#~ msgstr "電源OFFまで(_O)"
+
+#~ msgid "How long until the monitor powers down."
+#~ msgstr "モニタの電源を OFF にするまでの時間を指定して下さい。"
+
+#~ msgid "How long until the monitor goes into power-saving mode."
+#~ msgstr "パワーセービング・モードに移行するまでの時間を指定して下さい。"
+
+#~ msgid "How long until the monitor goes completely black."
+#~ msgstr "モニターがスタンドバイになるまでの時間を指定して下さい。"
+
+#~ msgid ""
+#~ "Whether the monitor should be powered off immediately in \"Blank Screen "
+#~ "Only\" mode, regardless of the above power-management timeouts."
+#~ msgstr ""
+#~ "ブランク・スクリーンのみのモードの時、上の電源管理の時間設定にもかかわらず"
+#~ "に直ちにモニターの電源を切るかを選択して下さい。"
+
+#~ msgid "_Quick Power-off in Blank Only Mode"
+#~ msgstr "ブランクモードの時直ちに電源を切る(_Q)"
+
+#~ msgid "Display Power Management"
+#~ msgstr "モニタのパワーマネージメント"
+
+#~ msgid ""
+#~ "Whether the screen should slowly fade to black when the screen saver "
+#~ "activates."
+#~ msgstr ""
+#~ "スクリーンセーバーを起動する時、スクリーンをゆっくりとフェードインするかど"
+#~ "うかを選択して下さい。"
+
+#~ msgid "Fade to Black when _Blanking"
+#~ msgstr "ブランクにする時にフェードイン(_B)"
+
+#~ msgid ""
+#~ "Whether the screen should slowly fade in from black when the screen saver "
+#~ "deactivates."
+#~ msgstr ""
+#~ "画面を再び明るくする時、スクリーンをゆっくりとフェードアウトするかどうかを"
+#~ "選択して下さい。"
+
+#~ msgid "Fade from Black When _Unblanking"
+#~ msgstr "明るくする時フェードアウト(_U)"
+
+#~ msgid "F_ade Duration"
+#~ msgstr "フェードする時間(_a)"
+
+#~ msgid "How long it should take for the screen to fade in and out."
+#~ msgstr "スクリーンをフェードイン/アウトする時間を指定して下さい。"
+
+#~ msgid "seconds"
+#~ msgstr "秒間"
+
+#~ msgid "_Theme:"
+#~ msgstr "テーマ(_T):"
+
+#~ msgid "The color scheme to use on the unlock dialog."
+#~ msgstr "パスワード画面で使うカラースキームを設定してください."
+
+#~ msgid "Show the what the unlock dialog will look like."
+#~ msgstr "実際どのように見えるかを表示します."
+
+#~ msgid "Blanking"
+#~ msgstr "ブランク・スクリーン"
+
+#~ msgid "_Advanced"
+#~ msgstr "拡張オプション(_A)"
+
+#~ msgid "dialog1"
+#~ msgstr "ダイアログ1"
+
+#~ msgid "_Advanced >>"
+#~ msgstr "拡張オプション(_A)>>"
+
+#~ msgid "_Standard <<"
+#~ msgstr "標準オプション(_S)<<"
+
+#~ msgid "_Reset to Defaults"
+#~ msgstr "デフォルトに戻す(_R)"
+
+#~ msgid "Standard"
+#~ msgstr "標準"
+
+#~ msgid "_Command Line:"
+#~ msgstr "コマンド(_C):"
+
+#~ msgid "_Visual:"
+#~ msgstr "ビジュアル(_V):"
+
+#~ msgid "Advanced"
+#~ msgstr "拡張オプション"
+
 #~ msgid ""
 #~ "You are running as root.  This usually means that xscreensaver\n"
 #~ "was unable to contact your X server because access control is\n"
@@ -11302,5 +11175,3 @@ msgstr ""
 
 #~ msgid "Copyright 息 1991-2002 %s"
 #~ msgstr "Copyright  1991-2002 %s"
-
-

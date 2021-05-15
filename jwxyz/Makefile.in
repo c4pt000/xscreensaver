@@ -110,8 +110,3 @@ list_tarfiles:
 #
 # DO NOT DELETE: updated by make distdepend
 
-jwxyz-common.o: ../config.h
-jwxyz-image.o: ../config.h
-jwxyz-timers.o: ../config.h
-jwzgles.o: ../config.h
-

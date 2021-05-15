@@ -110,7 +110,7 @@ cd $archdir
 
 export CFLAGS="${CFLAGS:-${RPM_OPT_FLAGS}}"
 
-CONFIG_OPTS="--prefix=/usr --with-pam --without-shadow --without-kerberos"
+CONFIG_OPTS="--with-pam  --without-shadow --without-kerberos"
 
 ln -s ../configure .
 %configure $CONFIG_OPTS

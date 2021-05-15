@@ -1,0 +1,2072 @@
+m4trace:/usr/share/aclocal/glib-gettext.m4:366: -1- AU_DEFUN([GLIB_GNU_GETTEXT], [AC_REQUIRE([AC_PROG_CC])dnl
+   
+   GLIB_LC_MESSAGES
+   GLIB_WITH_NLS
+
+   if test "$gt_cv_have_gettext" = "yes"; then
+     if test "x$ALL_LINGUAS" = "x"; then
+       LINGUAS=
+     else
+       AC_MSG_CHECKING(for catalogs to be installed)
+       NEW_LINGUAS=
+       for presentlang in $ALL_LINGUAS; do
+         useit=no
+         if test "%UNSET%" != "${LINGUAS-%UNSET%}"; then
+           desiredlanguages="$LINGUAS"
+         else
+           desiredlanguages="$ALL_LINGUAS"
+         fi
+         for desiredlang in $desiredlanguages; do
+ 	   # Use the presentlang catalog if desiredlang is
+           #   a. equal to presentlang, or
+           #   b. a variant of presentlang (because in this case,
+           #      presentlang can be used as a fallback for messages
+           #      which are not translated in the desiredlang catalog).
+           case "$desiredlang" in
+             "$presentlang"*) useit=yes;;
+           esac
+         done
+         if test $useit = yes; then
+           NEW_LINGUAS="$NEW_LINGUAS $presentlang"
+         fi
+       done
+       LINGUAS=$NEW_LINGUAS
+       AC_MSG_RESULT($LINGUAS)
+     fi
+
+     dnl Construct list of names of catalog files to be constructed.
+     if test -n "$LINGUAS"; then
+       for lang in $LINGUAS; do CATALOGS="$CATALOGS $lang$CATOBJEXT"; done
+     fi
+   fi
+
+   dnl If the AC_CONFIG_AUX_DIR macro for autoconf is used we possibly
+   dnl find the mkinstalldirs script in another subdir but ($top_srcdir).
+   dnl Try to locate is.
+   MKINSTALLDIRS=
+   if test -n "$ac_aux_dir"; then
+     MKINSTALLDIRS="$ac_aux_dir/mkinstalldirs"
+   fi
+   if test -z "$MKINSTALLDIRS"; then
+     MKINSTALLDIRS="\$(top_srcdir)/mkinstalldirs"
+   fi
+   AC_SUBST(MKINSTALLDIRS)
+
+   dnl Generate list of files to be processed by xgettext which will
+   dnl be included in po/Makefile.
+   test -d po || mkdir po
+   if test "x$srcdir" != "x."; then
+     if test "x`echo $srcdir | sed 's@/.*@@'`" = "x"; then
+       posrcprefix="$srcdir/"
+     else
+       posrcprefix="../$srcdir/"
+     fi
+   else
+     posrcprefix="../"
+   fi
+   rm -f po/POTFILES
+   sed -e "/^#/d" -e "/^\$/d" -e "s,.*,	$posrcprefix& \\\\," -e "\$s/\(.*\) \\\\/\1/" \
+	< $srcdir/po/POTFILES.in > po/POTFILES
+  ], [[$0: This macro is deprecated. You should use upstream gettext instead.]])
+m4trace:/usr/share/aclocal/glib-gettext.m4:366: -1- AC_DEFUN([GLIB_GNU_GETTEXT], [AC_DIAGNOSE([obsolete], [The macro `GLIB_GNU_GETTEXT' is obsolete.
+You should run autoupdate.])dnl
+AC_REQUIRE([AC_PROG_CC])dnl
+   
+   GLIB_LC_MESSAGES
+   GLIB_WITH_NLS
+
+   if test "$gt_cv_have_gettext" = "yes"; then
+     if test "x$ALL_LINGUAS" = "x"; then
+       LINGUAS=
+     else
+       AC_MSG_CHECKING(for catalogs to be installed)
+       NEW_LINGUAS=
+       for presentlang in $ALL_LINGUAS; do
+         useit=no
+         if test "%UNSET%" != "${LINGUAS-%UNSET%}"; then
+           desiredlanguages="$LINGUAS"
+         else
+           desiredlanguages="$ALL_LINGUAS"
+         fi
+         for desiredlang in $desiredlanguages; do
+ 	   # Use the presentlang catalog if desiredlang is
+           #   a. equal to presentlang, or
+           #   b. a variant of presentlang (because in this case,
+           #      presentlang can be used as a fallback for messages
+           #      which are not translated in the desiredlang catalog).
+           case "$desiredlang" in
+             "$presentlang"*) useit=yes;;
+           esac
+         done
+         if test $useit = yes; then
+           NEW_LINGUAS="$NEW_LINGUAS $presentlang"
+         fi
+       done
+       LINGUAS=$NEW_LINGUAS
+       AC_MSG_RESULT($LINGUAS)
+     fi
+
+     dnl Construct list of names of catalog files to be constructed.
+     if test -n "$LINGUAS"; then
+       for lang in $LINGUAS; do CATALOGS="$CATALOGS $lang$CATOBJEXT"; done
+     fi
+   fi
+
+   dnl If the AC_CONFIG_AUX_DIR macro for autoconf is used we possibly
+   dnl find the mkinstalldirs script in another subdir but ($top_srcdir).
+   dnl Try to locate is.
+   MKINSTALLDIRS=
+   if test -n "$ac_aux_dir"; then
+     MKINSTALLDIRS="$ac_aux_dir/mkinstalldirs"
+   fi
+   if test -z "$MKINSTALLDIRS"; then
+     MKINSTALLDIRS="\$(top_srcdir)/mkinstalldirs"
+   fi
+   AC_SUBST(MKINSTALLDIRS)
+
+   dnl Generate list of files to be processed by xgettext which will
+   dnl be included in po/Makefile.
+   test -d po || mkdir po
+   if test "x$srcdir" != "x."; then
+     if test "x`echo $srcdir | sed 's@/.*@@'`" = "x"; then
+       posrcprefix="$srcdir/"
+     else
+       posrcprefix="../$srcdir/"
+     fi
+   else
+     posrcprefix="../"
+   fi
+   rm -f po/POTFILES
+   sed -e "/^#/d" -e "/^\$/d" -e "s,.*,	$posrcprefix& \\\\," -e "\$s/\(.*\) \\\\/\1/" \
+	< $srcdir/po/POTFILES.in > po/POTFILES
+  ])
+m4trace:/usr/share/aclocal/glib-gettext.m4:466: -1- AC_DEFUN([AM_GLIB_GNU_GETTEXT], [GLIB_GNU_GETTEXT($@)])
+m4trace:/usr/share/aclocal/glib-gettext.m4:466: -1- AC_DEFUN([AM_GLIB_DEFINE_LOCALEDIR], [GLIB_DEFINE_LOCALEDIR($@)])
+m4trace:/usr/share/aclocal/glib-gettext.m4:476: -1- AC_DEFUN([GLIB_RUN_PROG], [cat >conftest.foo <<_ACEOF
+$2
+_ACEOF
+if AC_RUN_LOG([$1 conftest.foo]); then
+  m4_ifval([$3], [$3], [:])
+m4_ifvaln([$4], [else $4])dnl
+echo "$as_me: failed input was:" >&AS_MESSAGE_LOG_FD
+sed 's/^/| /' conftest.foo >&AS_MESSAGE_LOG_FD
+fi])
+m4trace:/usr/share/aclocal/intltool.m4:27: -1- AC_DEFUN([IT_PROG_INTLTOOL], [
+AC_PREREQ([2.50])dnl
+AC_REQUIRE([AM_NLS])dnl
+
+case "$am__api_version" in
+    1.[01234])
+	AC_MSG_ERROR([Automake 1.5 or newer is required to use intltool])
+    ;;
+    *)
+    ;;
+esac
+
+INTLTOOL_REQUIRED_VERSION_AS_INT=`echo $1 | awk -F. '{ print $ 1 * 1000 + $ 2 * 100 + $ 3; }'`
+INTLTOOL_APPLIED_VERSION=`intltool-update --version | head -1 | cut -d" " -f3`
+INTLTOOL_APPLIED_VERSION_AS_INT=`echo $INTLTOOL_APPLIED_VERSION | awk -F. '{ print $ 1 * 1000 + $ 2 * 100 + $ 3; }'`
+if test -n "$1"; then
+    AC_MSG_CHECKING([for intltool >= $1])
+    AC_MSG_RESULT([$INTLTOOL_APPLIED_VERSION found])
+    test "$INTLTOOL_APPLIED_VERSION_AS_INT" -ge "$INTLTOOL_REQUIRED_VERSION_AS_INT" ||
+	AC_MSG_ERROR([Your intltool is too old.  You need intltool $1 or later.])
+fi
+
+AC_PATH_PROG(INTLTOOL_UPDATE, [intltool-update])
+AC_PATH_PROG(INTLTOOL_MERGE, [intltool-merge])
+AC_PATH_PROG(INTLTOOL_EXTRACT, [intltool-extract])
+if test -z "$INTLTOOL_UPDATE" -o -z "$INTLTOOL_MERGE" -o -z "$INTLTOOL_EXTRACT"; then
+    AC_MSG_ERROR([The intltool scripts were not found. Please install intltool.])
+fi
+
+if test -z "$AM_DEFAULT_VERBOSITY"; then
+  AM_DEFAULT_VERBOSITY=1
+fi
+AC_SUBST([AM_DEFAULT_VERBOSITY])
+
+INTLTOOL_V_MERGE='$(INTLTOOL__v_MERGE_$(V))'
+INTLTOOL__v_MERGE_='$(INTLTOOL__v_MERGE_$(AM_DEFAULT_VERBOSITY))'
+INTLTOOL__v_MERGE_0='@echo "  ITMRG " [$]@;'
+AC_SUBST(INTLTOOL_V_MERGE)
+AC_SUBST(INTLTOOL__v_MERGE_)
+AC_SUBST(INTLTOOL__v_MERGE_0)
+
+INTLTOOL_V_MERGE_OPTIONS='$(intltool__v_merge_options_$(V))'
+intltool__v_merge_options_='$(intltool__v_merge_options_$(AM_DEFAULT_VERBOSITY))'
+intltool__v_merge_options_0='-q'
+AC_SUBST(INTLTOOL_V_MERGE_OPTIONS)
+AC_SUBST(intltool__v_merge_options_)
+AC_SUBST(intltool__v_merge_options_0)
+
+  INTLTOOL_DESKTOP_RULE='%.desktop:   %.desktop.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+INTLTOOL_DIRECTORY_RULE='%.directory: %.directory.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+     INTLTOOL_KEYS_RULE='%.keys:      %.keys.in      $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -k -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+     INTLTOOL_PROP_RULE='%.prop:      %.prop.in      $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+      INTLTOOL_OAF_RULE='%.oaf:       %.oaf.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -o -p $(top_srcdir)/po $< [$]@'
+     INTLTOOL_PONG_RULE='%.pong:      %.pong.in      $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+   INTLTOOL_SERVER_RULE='%.server:    %.server.in    $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -o -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+    INTLTOOL_SHEET_RULE='%.sheet:     %.sheet.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+INTLTOOL_SOUNDLIST_RULE='%.soundlist: %.soundlist.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+       INTLTOOL_UI_RULE='%.ui:        %.ui.in        $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+      INTLTOOL_XML_RULE='%.xml:       %.xml.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+if test "$INTLTOOL_APPLIED_VERSION_AS_INT" -ge 5000; then
+      INTLTOOL_XML_NOMERGE_RULE='%.xml:       %.xml.in       $(INTLTOOL_MERGE) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u --no-translations $< [$]@'
+else
+      INTLTOOL_XML_NOMERGE_RULE='%.xml:       %.xml.in       $(INTLTOOL_MERGE) ; $(INTLTOOL_V_MERGE)_it_tmp_dir=tmp.intltool.[$][$]RANDOM && mkdir [$][$]_it_tmp_dir && LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u [$][$]_it_tmp_dir $< [$]@ && rmdir [$][$]_it_tmp_dir'
+fi
+      INTLTOOL_XAM_RULE='%.xam:       %.xml.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+      INTLTOOL_KBD_RULE='%.kbd:       %.kbd.in       $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -m -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+    INTLTOOL_CAVES_RULE='%.caves:     %.caves.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+  INTLTOOL_SCHEMAS_RULE='%.schemas:   %.schemas.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -s -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+    INTLTOOL_THEME_RULE='%.theme:     %.theme.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@' 
+    INTLTOOL_SERVICE_RULE='%.service: %.service.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
+   INTLTOOL_POLICY_RULE='%.policy:    %.policy.in    $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -x -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
+
+_IT_SUBST(INTLTOOL_DESKTOP_RULE)
+_IT_SUBST(INTLTOOL_DIRECTORY_RULE)
+_IT_SUBST(INTLTOOL_KEYS_RULE)
+_IT_SUBST(INTLTOOL_PROP_RULE)
+_IT_SUBST(INTLTOOL_OAF_RULE)
+_IT_SUBST(INTLTOOL_PONG_RULE)
+_IT_SUBST(INTLTOOL_SERVER_RULE)
+_IT_SUBST(INTLTOOL_SHEET_RULE)
+_IT_SUBST(INTLTOOL_SOUNDLIST_RULE)
+_IT_SUBST(INTLTOOL_UI_RULE)
+_IT_SUBST(INTLTOOL_XAM_RULE)
+_IT_SUBST(INTLTOOL_KBD_RULE)
+_IT_SUBST(INTLTOOL_XML_RULE)
+_IT_SUBST(INTLTOOL_XML_NOMERGE_RULE)
+_IT_SUBST(INTLTOOL_CAVES_RULE)
+_IT_SUBST(INTLTOOL_SCHEMAS_RULE)
+_IT_SUBST(INTLTOOL_THEME_RULE)
+_IT_SUBST(INTLTOOL_SERVICE_RULE)
+_IT_SUBST(INTLTOOL_POLICY_RULE)
+
+# Check the gettext tools to make sure they are GNU
+AC_PATH_PROG(XGETTEXT, xgettext)
+AC_PATH_PROG(MSGMERGE, msgmerge)
+AC_PATH_PROG(MSGFMT, msgfmt)
+AC_PATH_PROG(GMSGFMT, gmsgfmt, $MSGFMT)
+if test -z "$XGETTEXT" -o -z "$MSGMERGE" -o -z "$MSGFMT"; then
+    AC_MSG_ERROR([GNU gettext tools not found; required for intltool])
+fi
+xgversion="`$XGETTEXT --version|grep '(GNU ' 2> /dev/null`"
+mmversion="`$MSGMERGE --version|grep '(GNU ' 2> /dev/null`"
+mfversion="`$MSGFMT --version|grep '(GNU ' 2> /dev/null`"
+if test -z "$xgversion" -o -z "$mmversion" -o -z "$mfversion"; then
+    AC_MSG_ERROR([GNU gettext tools not found; required for intltool])
+fi
+
+AC_PATH_PROG(INTLTOOL_PERL, perl)
+if test -z "$INTLTOOL_PERL"; then
+   AC_MSG_ERROR([perl not found])
+fi
+AC_MSG_CHECKING([for perl >= 5.8.1])
+$INTLTOOL_PERL -e "use 5.8.1;" > /dev/null 2>&1
+if test $? -ne 0; then
+   AC_MSG_ERROR([perl 5.8.1 is required for intltool])
+else
+   IT_PERL_VERSION=`$INTLTOOL_PERL -e "printf '%vd', $^V"`
+   AC_MSG_RESULT([$IT_PERL_VERSION])
+fi
+if test "x$2" != "xno-xml"; then
+   AC_MSG_CHECKING([for XML::Parser])
+   if `$INTLTOOL_PERL -e "require XML::Parser" 2>/dev/null`; then
+       AC_MSG_RESULT([ok])
+   else
+       AC_MSG_ERROR([XML::Parser perl module is required for intltool])
+   fi
+fi
+
+# Substitute ALL_LINGUAS so we can use it in po/Makefile
+AC_SUBST(ALL_LINGUAS)
+
+IT_PO_SUBDIR([po])
+
+])
+m4trace:/usr/share/aclocal/intltool.m4:168: -1- AC_DEFUN([IT_PO_SUBDIR], [AC_PREREQ([2.53])dnl We use ac_top_srcdir inside AC_CONFIG_COMMANDS.
+dnl
+dnl The following CONFIG_COMMANDS should be executed at the very end
+dnl of config.status.
+AC_CONFIG_COMMANDS_PRE([
+  AC_CONFIG_COMMANDS([$1/stamp-it], [
+    if [ ! grep "^# INTLTOOL_MAKEFILE$" "$1/Makefile.in" > /dev/null ]; then
+       AC_MSG_ERROR([$1/Makefile.in.in was not created by intltoolize.])
+    fi
+    rm -f "$1/stamp-it" "$1/stamp-it.tmp" "$1/POTFILES" "$1/Makefile.tmp"
+    >"$1/stamp-it.tmp"
+    [sed '/^#/d
+	 s/^[[].*] *//
+	 /^[ 	]*$/d
+	'"s|^|	$ac_top_srcdir/|" \
+      "$srcdir/$1/POTFILES.in" | sed '$!s/$/ \\/' >"$1/POTFILES"
+    ]
+    [sed '/^POTFILES =/,/[^\\]$/ {
+		/^POTFILES =/!d
+		r $1/POTFILES
+	  }
+	 ' "$1/Makefile.in" >"$1/Makefile"]
+    rm -f "$1/Makefile.tmp"
+    mv "$1/stamp-it.tmp" "$1/stamp-it"
+  ])
+])dnl
+])
+m4trace:/usr/share/aclocal/intltool.m4:201: -1- AC_DEFUN([_IT_SUBST], [
+AC_SUBST([$1])
+m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([$1])])
+
+])
+m4trace:/usr/share/aclocal/intltool.m4:209: -1- AU_DEFUN([AC_PROG_INTLTOOL], [m4_if($#, 0, [IT_PROG_INTLTOOL], [IT_PROG_INTLTOOL($@)])])
+m4trace:/usr/share/aclocal/intltool.m4:209: -1- AC_DEFUN([AC_PROG_INTLTOOL], [AC_DIAGNOSE([obsolete], [The macro `AC_PROG_INTLTOOL' is obsolete.
+You should run autoupdate.])dnl
+m4_if($#, 0, [IT_PROG_INTLTOOL], [IT_PROG_INTLTOOL($@)])])
+m4trace:/usr/share/aclocal/nls.m4:23: -1- AC_DEFUN([AM_NLS], [
+  AC_MSG_CHECKING([whether NLS is requested])
+  dnl Default is enabled NLS
+  AC_ARG_ENABLE([nls],
+    [  --disable-nls           do not use Native Language Support],
+    USE_NLS=$enableval, USE_NLS=yes)
+  AC_MSG_RESULT([$USE_NLS])
+  AC_SUBST([USE_NLS])
+])
+m4trace:/usr/share/aclocal-1.16/substnot.m4:12: -1- AC_DEFUN([_AM_SUBST_NOTMAKE])
+m4trace:/usr/share/aclocal-1.16/substnot.m4:17: -1- AC_DEFUN([AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE($@)])
+m4trace:configure.ac:7: -1- m4_pattern_forbid([^_?A[CHUM]_])
+m4trace:configure.ac:7: -1- m4_pattern_forbid([_AC_])
+m4trace:configure.ac:7: -1- m4_pattern_forbid([^LIBOBJS$], [do not use LIBOBJS directly, use AC_LIBOBJ (see section `AC_LIBOBJ vs LIBOBJS'])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^AS_FLAGS$])
+m4trace:configure.ac:7: -1- m4_pattern_forbid([^_?m4_])
+m4trace:configure.ac:7: -1- m4_pattern_forbid([^dnl$])
+m4trace:configure.ac:7: -1- m4_pattern_forbid([^_?AS_])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^SHELL$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PATH_SEPARATOR$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_NAME$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_TARNAME$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_VERSION$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_STRING$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_BUGREPORT$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_URL$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^exec_prefix$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^prefix$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^program_transform_name$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^bindir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^sbindir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^libexecdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^datarootdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^datadir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^sysconfdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^sharedstatedir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^localstatedir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^runstatedir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^includedir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^oldincludedir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^docdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^infodir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^htmldir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^dvidir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^pdfdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^psdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^libdir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^localedir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^mandir$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_NAME$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_TARNAME$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_VERSION$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_STRING$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_BUGREPORT$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^PACKAGE_URL$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^DEFS$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^ECHO_C$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^ECHO_N$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^ECHO_T$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^build_alias$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^host_alias$])
+m4trace:configure.ac:7: -1- m4_pattern_allow([^target_alias$])
+m4trace:configure.ac:302: -1- AC_DEFUN([AC_CHECK_GCC_ARG], [if test -n "$GCC"; then
+   AC_CACHE_CHECK([whether gcc accepts [$2]],
+     ac_cv_gcc_accepts_[$1],
+    [rm -rf conftest.$ac_ext
+     touch conftest.$ac_ext
+     if ( ( gcc -c [$2] conftest.$ac_ext -o/dev/null >/dev/null ) 2>&1 | \
+          grep unrecognized >/dev/null ); then
+       ac_cv_gcc_accepts_[$1]=no
+     else
+       ac_cv_gcc_accepts_[$1]=yes
+       CC="$CC [$2]"
+     fi])
+   ac_gcc_accepts_[$1]="$ac_cv_gcc_accepts_[$1]"
+  fi
+])
+m4trace:configure.ac:326: -1- AC_DEFUN([AC_PROG_CC_ANSI], [AC_REQUIRE([AC_PROG_CC])
+
+  if test -z "$GCC"; then
+    # not using GCC
+    AC_MSG_CHECKING(how to request ANSI compilation)
+    case "$host" in
+      *-hpux* )
+        AC_MSG_RESULT(HPUX: adding -Ae)
+        CC="$CC -Ae"
+      ;;
+      *-aix* )
+        AC_MSG_RESULT(AIX: adding -qlanglvl=ansi -qhalt=e)
+        CC="$CC -qlanglvl=ansi -qhalt=e"
+      ;;
+      *-dec-* )
+        AC_MSG_RESULT(DEC: adding -std1 -ieee)
+        CC="$CC -std1"
+      ;;
+      *)
+        AC_MSG_RESULT(no idea)
+      ;;
+    esac
+  else
+    # using GCC
+    case "$host" in
+      *-solaris*)
+        AC_MSG_RESULT(Solaris: adding -D__EXTENSIONS__)
+        CC="$CC -D__EXTENSIONS__"
+      ;;
+    esac
+
+    # Prior to 1996, XScreenSaver was written in K&R C, because ANSI C
+    # compilers (function prototypes!) were not yet universally deployed.
+    # And even after the conversion to ANSI C, GNU C's various non-standard
+    # extensions (such as allowing C++ style "//" comments in C code, and
+    # declarations after statements) were not supported by non-gcc compilers
+    # for many years, so we continued to use "-std=c89" to prevent those
+    # GNU-isms from sneaking in to the code.  Well, these days various
+    # vendors have sloppily allowed non-ANSI syntax to slip into their
+    # library header files.  GTK and OpenGL have been major offenders in this
+    # way.  So... as of 2021, I guess we are forced to use "-std=gnu89", to
+    # allow those extensions, and hope that the warnings generated by
+    # "-pedantic" are heeded.
+    #
+    AC_CHECK_GCC_ARG(gnu89, -std=gnu89)
+    AC_CHECK_GCC_ARG(pedantic, -pedantic)
+    AC_CHECK_GCC_ARG(Wall, -Wall)
+    AC_CHECK_GCC_ARG(wnested_externs,       -Wnested-externs)
+    AC_CHECK_GCC_ARG(wstrict_prototypes,    -Wstrict-prototypes)
+    AC_CHECK_GCC_ARG(wmissing_prototypes,   -Wmissing-prototypes)
+    AC_CHECK_GCC_ARG(declaration_after,     -Wdeclaration-after-statement)
+    # "string length is greater than ISO C89 compilers required to support"
+    AC_CHECK_GCC_ARG(no_overlength_strings, -Wno-overlength-strings)
+    # Ignore warnings about using "inline"
+    AC_CHECK_GCC_ARG(no_language_ext_token, -Wno-language-extension-token)
+    # Xlib headers use named variadic macros.
+    AC_CHECK_GCC_ARG(no_variadic_macros,    -Wno-variadic-macros)
+  fi
+])
+m4trace:configure.ac:394: -1- AC_DEFUN([AC_PROG_INSTALL_DIRS], [AC_CACHE_CHECK([whether "\${INSTALL} -d" creates intermediate directories],
+    ac_cv_install_d_creates_dirs,
+    [ac_cv_install_d_creates_dirs=no
+     rm -rf conftestdir
+     if mkdir conftestdir; then
+       cd conftestdir 2>/dev/null
+       ${INSTALL} -d `pwd`/dir1/dir2 >/dev/null 2>&1
+       if test -d dir1/dir2/. ; then
+         ac_cv_install_d_creates_dirs=yes
+       fi
+       cd .. 2>/dev/null
+       rm -rf conftestdir
+     fi
+    ])
+
+  if test "$ac_cv_install_d_creates_dirs" = no ; then
+    AC_CACHE_CHECK([whether "mkdir -p" creates intermediate directories],
+      ac_cv_mkdir_p_creates_dirs,
+      [ac_cv_mkdir_p_creates_dirs=no
+       rm -rf conftestdir
+       if mkdir conftestdir; then
+         cd conftestdir 2>/dev/null
+         mkdir -p dir1/dir2 >/dev/null 2>&1
+         if test -d dir1/dir2/. ; then
+           ac_cv_mkdir_p_creates_dirs=yes
+         fi
+         cd .. 2>/dev/null
+         rm -rf conftestdir
+       fi
+      ])
+  fi
+
+  if test "$ac_cv_install_d_creates_dirs" = yes ; then
+    INSTALL_DIRS='${INSTALL} -d'
+  elif test "$ac_cv_mkdir_p_creates_dirs" = yes ; then
+    INSTALL_DIRS='mkdir -p'
+  else
+    # any other ideas?
+    INSTALL_DIRS='${INSTALL} -d'
+  fi
+])
+m4trace:configure.ac:445: -1- AC_DEFUN([AC_GETTIMEOFDAY_ARGS], [AC_MSG_CHECKING(how to call gettimeofday)
+  AC_CACHE_VAL(ac_cv_gettimeofday_args,
+   [AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM([#include <stdlib.h>
+                    #include <sys/time.h>],
+                      [struct timeval tv; struct timezone tzp;
+                    gettimeofday(&tv, &tzp);])],
+    [ac_gettimeofday_args=2],
+    [ac_gettimeofday_args=1])
+    ac_cv_gettimeofday_args=$ac_gettimeofday_args])
+  ac_gettimeofday_args=$ac_cv_gettimeofday_args
+  if test "$ac_gettimeofday_args" = 1 ; then
+    AC_DEFINE(HAVE_GETTIMEOFDAY)
+    AC_MSG_RESULT(one argument)
+  elif test "$ac_gettimeofday_args" = 2 ; then
+    AC_DEFINE(HAVE_GETTIMEOFDAY)
+    AC_DEFINE(GETTIMEOFDAY_TWO_ARGS)
+    AC_MSG_RESULT(two arguments)
+  else
+    AC_MSG_RESULT(unknown)
+  fi
+])
+m4trace:configure.ac:481: -1- AC_DEFUN([AC_PROG_PERL], [AC_PATH_PROGS(PERL, [perl5 perl],,)
+  if test -z "$PERL" ; then
+    PERL_VERSION=0
+  else
+    AC_CACHE_CHECK([perl version], ac_cv_perl_version,
+                   [ac_cv_perl_version=`$PERL -e "$perl_version_cmd"`])
+    PERL_VERSION=$ac_cv_perl_version
+  fi
+ ])
+m4trace:configure.ac:499: -1- AC_DEFUN([AC_CHECK_ICMP], [AC_CACHE_CHECK([for struct icmp], ac_cv_have_icmp,
+  [AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM([#include <stdlib.h>
+                   #include <stdio.h>
+                   #include <math.h>
+                   #include <unistd.h>
+                   #include <limits.h>
+                   #include <signal.h>
+                   #include <fcntl.h>
+                   #include <sys/types.h>
+                   #include <sys/time.h>
+                   #include <sys/ipc.h>
+                   #include <sys/shm.h>
+                   #include <sys/socket.h>
+                   #include <netinet/in_systm.h>
+                   #include <netinet/in.h>
+                   #include <netinet/ip.h>
+                   #include <netinet/ip_icmp.h>
+                   #include <netinet/udp.h>
+                   #include <arpa/inet.h>
+                   #include <netdb.h>],
+                  [struct icmp i;
+                   struct sockaddr s;
+                   struct sockaddr_in si;
+                   struct ip ip;
+                   i.icmp_type = ICMP_ECHO;
+                   i.icmp_code = 0;
+                   i.icmp_cksum = 0;
+                   i.icmp_id = 0;
+                   i.icmp_seq = 0;
+                   si.sin_family = AF_INET;
+                   #if defined(__DECC) || defined(_IP_VHL)
+                   ip.ip_vhl = 0;
+                   #else
+                   ip.ip_hl = 0;
+                   #endif
+                   ])],
+   [ac_cv_have_icmp=yes],
+   [ac_cv_have_icmp=no])])
+ if test "$ac_cv_have_icmp" = yes ; then
+   AC_DEFINE(HAVE_ICMP)
+ fi])
+m4trace:configure.ac:543: -1- AC_DEFUN([AC_CHECK_ICMPHDR], [AC_CACHE_CHECK([for struct icmphdr], ac_cv_have_icmphdr,
+  [AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM([#include <stdlib.h>
+                   #include <stdio.h>
+                   #include <math.h>
+                   #include <unistd.h>
+                   #include <limits.h>
+                   #include <signal.h>
+                   #include <fcntl.h>
+                   #include <sys/types.h>
+                   #include <sys/time.h>
+                   #include <sys/ipc.h>
+                   #include <sys/shm.h>
+                   #include <sys/socket.h>
+                   #include <netinet/in_systm.h>
+                   #include <netinet/in.h>
+                   #include <netinet/ip.h>
+                   #include <netinet/ip_icmp.h>
+                   #include <netinet/udp.h>
+                   #include <arpa/inet.h>
+                   #include <netdb.h>],
+                  [struct icmphdr i;
+                   struct sockaddr s;
+                   struct sockaddr_in si;
+                   struct ip ip;
+                   i.type = ICMP_ECHO;
+                   i.code = 0;
+                   i.checksum = 0;
+                   i.un.echo.id = 0;
+                   i.un.echo.sequence = 0;
+                   si.sin_family = AF_INET;
+                   ip.ip_hl = 0;])],
+    [ac_cv_have_icmphdr=yes],
+    [ac_cv_have_icmphdr=no])])
+ if test "$ac_cv_have_icmphdr" = yes ; then
+   AC_DEFINE(HAVE_ICMPHDR)
+ fi])
+m4trace:configure.ac:593: -1- AC_DEFUN([AC_PATH_X_APP_DEFAULTS_XMKMF], [
+  rm -fr conftestdir
+  if mkdir conftestdir; then
+    cd conftestdir 2>/dev/null
+    # Make sure to not put "make" in the Imakefile rules, since we grep it out.
+    cat > Imakefile <<'EOF'
+acfindx:
+	@echo 'ac_x_app_defaults="${XAPPLOADDIR}"'
+EOF
+    if (xmkmf) >/dev/null 2>&1 && test -f Makefile; then
+      # GNU make sometimes prints "make[1]: Entering...", which'd confuse us.
+      eval `${MAKE-make} acfindx 2>/dev/null | grep -v make`
+    fi
+    cd .. 2>/dev/null
+    rm -fr conftestdir
+  fi])
+m4trace:configure.ac:610: -1- AC_DEFUN([AC_PATH_X_APP_DEFAULTS_DIRECT], [
+  # Look for the directory under a standard set of common directories.
+  # Check X11 before X11Rn because it's often a symlink to the current release.
+  for ac_dir in                                 \
+                                                \
+    /usr/share/X11/app-defaults                 \
+                                                \
+    /usr/X11/lib/app-defaults                   \
+    /usr/X11R6/lib/app-defaults                 \
+    /usr/X11R6/lib/X11/app-defaults             \
+    /usr/X11R5/lib/app-defaults                 \
+    /usr/X11R5/lib/X11/app-defaults             \
+    /usr/X11R4/lib/app-defaults                 \
+    /usr/X11R4/lib/X11/app-defaults             \
+                                                \
+    /usr/lib/X11/app-defaults                   \
+    /usr/lib/X11R6/app-defaults                 \
+    /usr/lib/X11R5/app-defaults                 \
+    /usr/lib/X11R4/app-defaults                 \
+                                                \
+    /etc/X11/app-defaults                       \
+                                                \
+    /usr/local/X11/lib/app-defaults             \
+    /usr/local/X11R6/lib/app-defaults           \
+    /usr/local/X11R5/lib/app-defaults           \
+    /usr/local/X11R4/lib/app-defaults           \
+                                                \
+    /usr/local/lib/X11/app-defaults             \
+    /usr/local/lib/X11R6/app-defaults           \
+    /usr/local/lib/X11R6/X11/app-defaults       \
+    /usr/local/lib/X11R5/app-defaults           \
+    /usr/local/lib/X11R5/X11/app-defaults       \
+    /usr/local/lib/X11R4/app-defaults           \
+    /usr/local/lib/X11R4/X11/app-defaults       \
+                                                \
+    /usr/X386/lib/X11/app-defaults              \
+    /usr/x386/lib/X11/app-defaults              \
+    /usr/XFree86/lib/X11/app-defaults           \
+                                                \
+    /usr/lib/X11/app-defaults                   \
+    /usr/local/lib/X11/app-defaults             \
+    /usr/unsupported/lib/X11/app-defaults       \
+    /usr/athena/lib/X11/app-defaults            \
+    /usr/local/x11r5/lib/X11/app-defaults       \
+    /usr/lpp/Xamples/lib/X11/app-defaults       \
+    /lib/usr/lib/X11/app-defaults               \
+                                                \
+    /usr/openwin/lib/app-defaults               \
+    /usr/openwin/lib/X11/app-defaults           \
+    /usr/openwin/share/lib/app-defaults         \
+    /usr/openwin/share/lib/X11/app-defaults     \
+                                                \
+    /X11R6/lib/app-defaults                     \
+    /X11R5/lib/app-defaults                     \
+    /X11R4/lib/app-defaults                     \
+    ; \
+  do
+    if test -d "$ac_dir"; then
+      ac_x_app_defaults=$ac_dir
+      break
+    fi
+  done
+])
+m4trace:configure.ac:674: -1- AC_DEFUN([AC_PATH_X_APP_DEFAULTS], [AC_REQUIRE_CPP()
+    AC_CACHE_CHECK([for X app-defaults directory], ac_cv_x_app_defaults,
+     [# skip this, it's always wrong these days.
+      #  AC_PATH_X_APP_DEFAULTS_XMKMF
+      if test x"$ac_x_app_defaults" = x; then
+        true AC_PATH_X_APP_DEFAULTS_DIRECT
+      fi
+      if test x"$ac_x_app_defaults" = x; then
+        /bin/echo -n 'fallback: '
+        ac_cv_x_app_defaults="/usr/lib/X11/app-defaults"
+      else
+        # Record where we found app-defaults for the cache.
+        ac_cv_x_app_defaults="$ac_x_app_defaults"
+      fi])
+    eval ac_x_app_defaults="$ac_cv_x_app_defaults"])
+m4trace:configure.ac:692: -1- AC_DEFUN([AC_XPOINTER], [AC_CACHE_CHECK([for XPointer], ac_cv_xpointer,
+                 [AC_TRY_X_COMPILE([#include <X11/Xlib.h>],
+                                   [XPointer foo = (XPointer) 0;],
+                                   [ac_cv_xpointer=yes],
+                                   [ac_cv_xpointer=no])])
+  if test "$ac_cv_xpointer" != yes; then
+   AC_DEFINE(XPointer,[char*])
+  fi])
+m4trace:configure.ac:702: -1- AC_DEFUN([AC_XT], [AC_CACHE_CHECK([for Xt], ac_cv_libxt,
+                 [AC_TRY_X_COMPILE([#include <X11/Xlib.h>
+                                    #include <X11/Intrinsic.h>],
+                                   [Widget foo = (Widget) 0;],
+                                   [ac_cv_libxt=yes],
+                                   [ac_cv_libxt=no])])])
+m4trace:configure.ac:714: -1- AC_DEFUN([AC_X_RANDOM_PATHS], [case "$host" in
+    *-hpux*)
+
+      # The following arcana was gleaned from conversations with
+      # Eric Schwartz <erics@col.hp.com>:
+      #
+      # On HPUX 10.x, the parts of X that HP considers "standard" live in
+      # /usr/{include,lib}/X11R6/.  The parts that HP doesn't consider
+      # "standard", notably, Xaw and Xmu, live in /usr/contrib/X11R6/.
+      # Yet /usr/contrib/X11R6/ comes preinstalled on all HPUX systems.
+      # Also, there are symlinks from /usr/include/ and /usr/lib/ into
+      # /usr/{include,lib}/X11R6/, so that (if you don't use Xmu at all)
+      # you don't need any -I or -L arguments.
+      #
+      # On HPUX 9.x, /usr/{include,lib}/X11R5/ and /usr/contrib/X11R5/
+      # are the same division as 10.x.  However, there are no symlinks to
+      # the X stuff from /usr/include/ and /usr/lib/, so -I and -L
+      # arguments are always necessary.
+      #
+      # However, X11R6 was available on HPUX 9.x as a patch: if that
+      # patch was installed, then all of X11R6 went in to
+      # /usr/contrib/X11R6/ (there was no /usr/{include,lib}/X11R6/.)
+      #
+      # HPUX 8.x was the same as 9.x, but was X11R4 instead (I don't know
+      # whether R5 was available as a patch; R6 undoubtedly was not.)
+      #
+      # So.  We try and use the highest numbered pair of
+      # /usr/{include,lib}/X11R?/ and /usr/contrib/X11R?/{include,lib}/
+      # that are available.  We do not mix and match different versions
+      # of X.
+      #
+      # Question I still don't know the answer to: (do you?)
+      #
+      #   * On HPUX 9.x, where /usr/include/X11R5/ was standard, and
+      #     /usr/contrib/X11R6/ could be installed as a patch, what was in
+      #     that contrib directory?  Did it contain so-called "standard"
+      #     X11R6, or did it include Xaw and Xmu as well?  If the former,
+      #     where did one find Xaw and Xmu on 9.x R6 systems?  Would this
+      #     be a situation where one had to reach into the R5 headers and
+      #     libs to find Xmu?  That is, must both R6 and R5 directories
+      #     be on the -I and -L lists in that case?
+      #
+      for version in X11R6 X11R5 X11R4 ; do
+        # if either pair of directories exists...
+        if test -d /usr/include/$version || test -d /usr/contrib/$version/include
+        then
+           # if contrib exists, use it...
+           if test -d /usr/contrib/$version/include ; then
+             X_CFLAGS="$X_CFLAGS -I/usr/contrib/$version/include"
+             X_LIBS="$X_LIBS -L/usr/contrib/$version/lib"
+           fi
+           # if the "standard" one exists, use it.
+           if test -d /usr/include/$version ; then
+             X_CFLAGS="$X_CFLAGS -I/usr/include/$version"
+             X_LIBS="$X_LIBS -L/usr/lib/$version"
+           fi
+           # since at least one of the pair exists, go no farther.
+           break
+        fi
+      done
+
+      # Now find Motif.  Thanks for not making xmkmf find this by
+      # default, you losers.
+      #
+      if test -d /usr/include/Motif2.1 ; then
+        X_CFLAGS="$X_CFLAGS -I/usr/include/Motif2.1"
+        X_LIBS="$X_LIBS -L/usr/lib/Motif2.1"
+      elif test -d /usr/include/Motif1.2 ; then
+        X_CFLAGS="$X_CFLAGS -I/usr/include/Motif1.2"
+        X_LIBS="$X_LIBS -L/usr/lib/Motif1.2"
+      elif test -d /usr/include/Motif1.1 ; then
+        X_CFLAGS="$X_CFLAGS -I/usr/include/Motif1.1"
+        X_LIBS="$X_LIBS -L/usr/lib/Motif1.1"
+      fi
+
+      # Now let's check for the pseudo-standard locations for OpenGL.
+      #
+      if test -d /opt/graphics/OpenGL/include ; then
+        # HP-UX 10.20 puts it here
+        X_CFLAGS="-I/opt/graphics/OpenGL/include $X_CFLAGS"
+        X_LIBS="-L/opt/graphics/OpenGL/lib $X_LIBS"
+      elif test -d /opt/Mesa/lib ; then
+        X_CFLAGS="-I/opt/Mesa/include $X_CFLAGS"
+        X_LIBS="-L/opt/Mesa/lib $X_LIBS"
+      fi
+
+
+      # On HPUX, default to installing in /opt/xscreensaver/ instead of
+      # in /usr/local/, unless there is already an xscreensaver in
+      # /usr/local/bin/.  This can be overridden with the --prefix arg
+      # to configure.  I'm not sure this is the right thing to do, but
+      # Richard Lloyd says so...
+      #
+      if test \! -x /usr/local/bin/xscreensaver ; then
+        ac_default_prefix=/opt/xscreensaver
+      fi
+
+    ;;
+    *-solaris*)
+
+      # Thanks for not making xmkmf find this by default, pinheads.
+      # And thanks for moving things around again, too.  Is this
+      # really the standard location now?  What happened to the
+      # joke that this kind of thing went in /opt?
+      # cthomp says "answer: CDE (Common Disorganized Environment)"
+      #
+      if test -f /usr/dt/include/Xm/Xm.h ; then
+        X_CFLAGS="$X_CFLAGS -I/usr/dt/include"
+        MOTIF_LIBS="$MOTIF_LIBS -L/usr/dt/lib -R/usr/dt/lib"
+
+        # Some versions of Slowlaris Motif require -lgen.  But not all.  Why?
+        AC_CHECK_LIB(gen, regcmp, [MOTIF_LIBS="$MOTIF_LIBS -lgen"])
+      fi
+
+    ;;
+    *-darwin*)
+
+      # MacPorts on macOS
+      if test -d /opt/local/include ; then
+        X_CFLAGS="-I/opt/local/include $X_CFLAGS"
+          X_LIBS="-L/opt/local/lib $X_LIBS"
+      fi
+
+      # Fink on macOS
+      if test -d /sw/include ; then
+        X_CFLAGS="-I/sw/include $X_CFLAGS"
+          X_LIBS="-L/sw/lib $X_LIBS"
+      fi
+
+      # Homebrew on macOS Intel
+      if test -d /usr/local/include ; then
+        X_CFLAGS="-I/usr/local/include $X_CFLAGS"
+          X_LIBS="-L/usr/local/lib $X_LIBS"
+      fi
+
+      # Homebrew on macOS ARM
+      if test -d /opt/homebrew/include ; then
+        X_CFLAGS="-I/opt/homebrew/include $X_CFLAGS"
+          X_LIBS="-L/opt/homebrew/lib $X_LIBS"
+      fi
+    ;;
+  esac])
+m4trace:configure.ac:858: -1- AC_DEFUN([AC_CHECK_GETIFADDRS], [AC_CACHE_CHECK([for getifaddrs], ac_cv_have_getifaddrs,
+  [AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM([#include <stdlib.h>
+                   #include <unistd.h>
+                   #include <arpa/inet.h>
+                   #include <ifaddrs.h>],
+                  [struct ifaddrs *ifa;
+                   getifaddrs (&ifa);
+                   ifa->ifa_next = 0;
+                   ifa->ifa_addr->sa_family = 0;])],
+    [ac_cv_have_getifaddrs=yes],
+    [ac_cv_have_getifaddrs=no])])
+ if test "$ac_cv_have_getifaddrs" = yes ; then
+   AC_DEFINE(HAVE_GETIFADDRS)
+ fi])
+m4trace:configure.ac:875: -1- AC_DEFUN([AC_TYPE_SOCKLEN_T], [AC_CACHE_CHECK([for socklen_t], ac_cv_type_socklen_t,
+  [AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM([
+      #include <sys/types.h>
+      #include <sys/socket.h>],
+     [socklen_t socklen;])],
+    [ac_cv_type_socklen_t=yes],
+    [ac_cv_type_socklen_t=no])])
+  if test "$ac_cv_type_socklen_t" != yes; then
+    AC_DEFINE(socklen_t, int,
+  [Define to `int' if <sys/types.h> or <sys/socket.h> does not define.])
+  fi])
+m4trace:configure.ac:897: -1- AC_DEFUN([AC_CHECK_X_HEADER], [
+  ac_save_CPPFLAGS="$CPPFLAGS"
+  if test \! -z "$includedir" ; then 
+    CPPFLAGS="$CPPFLAGS -I$includedir"
+  fi
+  CPPFLAGS="$CPPFLAGS $X_CFLAGS"
+  CPPFLAGS=`eval eval eval eval eval eval eval eval eval echo $CPPFLAGS`
+  AC_CHECK_HEADER([$1],[$2],[$3],[$4])
+  CPPFLAGS="$ac_save_CPPFLAGS"])
+m4trace:configure.ac:909: -1- AC_DEFUN([AC_EGREP_X_HEADER], [
+  ac_save_CPPFLAGS="$CPPFLAGS"
+  if test \! -z "$includedir" ; then 
+    CPPFLAGS="$CPPFLAGS -I$includedir"
+  fi
+  CPPFLAGS="$CPPFLAGS $X_CFLAGS"
+  CPPFLAGS=`eval eval eval eval eval eval eval eval eval echo $CPPFLAGS`
+  AC_EGREP_HEADER([$1], [$2], [$3], [$4])
+  CPPFLAGS="$ac_save_CPPFLAGS"])
+m4trace:configure.ac:921: -1- AC_DEFUN([AC_TRY_X_COMPILE], [
+  ac_save_CPPFLAGS="$CPPFLAGS"
+  if test \! -z "$includedir" ; then 
+    CPPFLAGS="$CPPFLAGS -I$includedir"
+  fi
+  CPPFLAGS="$CPPFLAGS $X_CFLAGS"
+  CPPFLAGS=`eval eval eval eval eval eval eval eval eval echo $CPPFLAGS`
+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([$1], [$2])],[$3],[$4])
+  CPPFLAGS="$ac_save_CPPFLAGS"])
+m4trace:configure.ac:935: -1- AC_DEFUN([AC_CHECK_X_LIB], [
+  ac_save_CPPFLAGS="$CPPFLAGS"
+  ac_save_LDFLAGS="$LDFLAGS"
+#  ac_save_LIBS="$LIBS"
+
+  if test \! -z "$includedir" ; then 
+    CPPFLAGS="$CPPFLAGS -I$includedir"
+  fi
+  # note: $X_CFLAGS includes $x_includes
+  CPPFLAGS="$CPPFLAGS $X_CFLAGS"
+
+  if test \! -z "$libdir" ; then
+    LDFLAGS="$LDFLAGS -L$libdir"
+  fi
+  # note: $X_LIBS includes $x_libraries
+  LDFLAGS="$LDFLAGS $X_LIBS $X_EXTRA_LIBS"
+
+  CPPFLAGS=`eval eval eval eval eval eval eval eval eval echo $CPPFLAGS`
+  LDFLAGS=`eval eval eval eval eval eval eval eval eval echo $LDFLAGS`
+  AC_CHECK_LIB([$1], [$2], [$3], [$4], [$5])
+  CPPFLAGS="$ac_save_CPPFLAGS"
+  LDFLAGS="$ac_save_LDFLAGS"
+#  LIBS="$ac_save_LIBS"
+  ])
+m4trace:configure.ac:963: -1- AC_DEFUN([AC_TRY_X_RUN], [
+  ac_save_CPPFLAGS="$CPPFLAGS"
+  if test \! -z "$includedir" ; then 
+    CPPFLAGS="$CPPFLAGS -I$includedir"
+  fi
+  CPPFLAGS="$CPPFLAGS $X_CFLAGS"
+  CPPFLAGS=`eval eval eval eval eval eval eval eval eval echo $CPPFLAGS`
+  AC_RUN_IFELSE([AC_LANG_SOURCE([$1])],[$2],[$3],[$4])
+  CPPFLAGS="$ac_save_CPPFLAGS"])
+m4trace:configure.ac:990: -1- AC_DEFUN([HANDLE_X_PATH_ARG], [
+   case "$[$1]" in
+    yes) ;;
+    no)  ;;
+
+    /*)
+     AC_MSG_CHECKING([for [$3] headers])
+     d=$[$1]/include
+     if test -d $d; then
+       X_CFLAGS="-I$d $X_CFLAGS"
+       AC_MSG_RESULT($d)
+     else
+       AC_MSG_RESULT(not found ($d: no such directory))
+     fi
+
+     AC_MSG_CHECKING([for [$3] libs])
+     d=$[$1]/lib
+     if test -d $d; then
+       X_LIBS="-L$d $X_LIBS"
+       AC_MSG_RESULT($d)
+     else
+       AC_MSG_RESULT(not found ($d: no such directory))
+     fi
+
+     # replace the directory string with "yes".
+     [$1]_req="yes"
+     [$1]=$[$1]_req
+     ;;
+
+    *)
+     echo ""
+     echo "error: argument to [$2] must be \"yes\", \"no\", or a directory."
+     echo "       If it is a directory, then \`DIR/include' will be added to"
+     echo "       the -I list, and \`DIR/lib' will be added to the -L list."
+     exit 1
+     ;;
+   esac
+  ])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^build$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^build_cpu$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^build_vendor$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^build_os$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^host$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^host_cpu$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^host_vendor$])
+m4trace:configure.ac:1048: -1- m4_pattern_allow([^host_os$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CFLAGS$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^ac_ct_CC$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^EXEEXT$])
+m4trace:configure.ac:1051: -1- m4_pattern_allow([^OBJEXT$])
+m4trace:configure.ac:1052: -1- AC_PROG_CC_ANSI
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([gnu89], [-std=gnu89])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([pedantic], [-pedantic])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([Wall], [-Wall])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([wnested_externs], [-Wnested-externs])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([wstrict_prototypes], [-Wstrict-prototypes])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([wmissing_prototypes], [-Wmissing-prototypes])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([declaration_after], [-Wdeclaration-after-statement])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([no_overlength_strings], [-Wno-overlength-strings])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([no_language_ext_token], [-Wno-language-extension-token])
+m4trace:configure.ac:1052: -1- AC_CHECK_GCC_ARG([no_variadic_macros], [-Wno-variadic-macros])
+m4trace:configure.ac:1053: -1- m4_pattern_allow([^CPP$])
+m4trace:configure.ac:1053: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:1053: -1- m4_pattern_allow([^CPP$])
+m4trace:configure.ac:1054: -1- m4_pattern_allow([^const$])
+m4trace:configure.ac:1059: -1- m4_pattern_allow([^INSTALL_PROGRAM$])
+m4trace:configure.ac:1059: -1- m4_pattern_allow([^INSTALL_SCRIPT$])
+m4trace:configure.ac:1059: -1- m4_pattern_allow([^INSTALL_DATA$])
+m4trace:configure.ac:1060: -1- AC_PROG_INSTALL_DIRS
+m4trace:configure.ac:1061: -1- m4_pattern_allow([^SET_MAKE$])
+m4trace:configure.ac:1071: -1- m4_pattern_allow([^GREP$])
+m4trace:configure.ac:1071: -1- m4_pattern_allow([^EGREP$])
+m4trace:configure.ac:1071: -1- m4_pattern_allow([^STDC_HEADERS$])
+m4trace:configure.ac:1072: -1- m4_pattern_allow([^mode_t$])
+m4trace:configure.ac:1073: -1- m4_pattern_allow([^pid_t$])
+m4trace:configure.ac:1074: -1- m4_pattern_allow([^size_t$])
+m4trace:configure.ac:1075: -1- m4_pattern_allow([^RETSIGTYPE$])
+m4trace:configure.ac:1076: -1- m4_pattern_allow([^HAVE_SYS_WAIT_H$])
+m4trace:configure.ac:1078: -1- AC_GETTIMEOFDAY_ARGS
+m4trace:configure.ac:1078: -1- m4_pattern_allow([^HAVE_GETTIMEOFDAY$])
+m4trace:configure.ac:1078: -1- m4_pattern_allow([^HAVE_GETTIMEOFDAY$])
+m4trace:configure.ac:1078: -1- m4_pattern_allow([^GETTIMEOFDAY_TWO_ARGS$])
+m4trace:configure.ac:1079: -1- m4_pattern_allow([^_FILE_OFFSET_BITS$])
+m4trace:configure.ac:1079: -1- m4_pattern_allow([^_LARGE_FILES$])
+m4trace:configure.ac:1083: -1- m4_pattern_allow([^HAVE_GETADDRINFO$])
+m4trace:configure.ac:1084: -1- m4_pattern_allow([^HAVE_STRUCT_SOCKADDR_SA_LEN$])
+m4trace:configure.ac:1085: -1- AC_CHECK_ICMP
+m4trace:configure.ac:1085: -1- m4_pattern_allow([^HAVE_ICMP$])
+m4trace:configure.ac:1086: -1- AC_CHECK_ICMPHDR
+m4trace:configure.ac:1086: -1- m4_pattern_allow([^HAVE_ICMPHDR$])
+m4trace:configure.ac:1087: -1- AC_CHECK_GETIFADDRS
+m4trace:configure.ac:1087: -1- m4_pattern_allow([^HAVE_GETIFADDRS$])
+m4trace:configure.ac:1088: -1- AC_TYPE_SOCKLEN_T
+m4trace:configure.ac:1088: -1- m4_pattern_allow([^socklen_t$])
+m4trace:configure.ac:1090: -1- AC_PROG_PERL
+m4trace:configure.ac:1090: -1- m4_pattern_allow([^PERL$])
+m4trace:configure.ac:1097: -1- m4_pattern_allow([^XMKMF$])
+m4trace:configure.ac:1097: -1- m4_pattern_allow([^X_DISPLAY_MISSING$])
+m4trace:configure.ac:1097: -1- m4_pattern_allow([^X_CFLAGS$])
+m4trace:configure.ac:1097: -1- m4_pattern_allow([^X_PRE_LIBS$])
+m4trace:configure.ac:1097: -1- m4_pattern_allow([^X_LIBS$])
+m4trace:configure.ac:1097: -1- m4_pattern_allow([^X_EXTRA_LIBS$])
+m4trace:configure.ac:1103: -1- AC_X_RANDOM_PATHS
+m4trace:configure.ac:1104: -1- AC_XPOINTER
+m4trace:configure.ac:1104: -1- AC_TRY_X_COMPILE([#include <X11/Xlib.h>], [XPointer foo = (XPointer) 0;], [ac_cv_xpointer=yes], [ac_cv_xpointer=no])
+m4trace:configure.ac:1104: -1- m4_pattern_allow([^XPointer$])
+m4trace:configure.ac:1105: -1- AC_XT
+m4trace:configure.ac:1105: -1- AC_TRY_X_COMPILE([#include <X11/Xlib.h>
+                                    #include <X11/Intrinsic.h>], [Widget foo = (Widget) 0;], [ac_cv_libxt=yes], [ac_cv_libxt=no])
+m4trace:configure.ac:1128: -1- m4_pattern_allow([^pkg_config$])
+m4trace:configure.ac:1178: -1- IT_PROG_INTLTOOL
+m4trace:configure.ac:1178: -1- AM_NLS
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^USE_NLS$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_UPDATE$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_MERGE$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_EXTRACT$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^AM_DEFAULT_VERBOSITY$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_V_MERGE$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL__v_MERGE_$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL__v_MERGE_0$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_V_MERGE_OPTIONS$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^intltool__v_merge_options_$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^intltool__v_merge_options_0$])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_DESKTOP_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_DESKTOP_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_DESKTOP_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_DIRECTORY_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_DIRECTORY_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_DIRECTORY_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_KEYS_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_KEYS_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_KEYS_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_PROP_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_PROP_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_PROP_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_OAF_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_OAF_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_OAF_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_PONG_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_PONG_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_PONG_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_SERVER_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_SERVER_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_SERVER_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_SHEET_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_SHEET_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_SHEET_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_SOUNDLIST_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_SOUNDLIST_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_SOUNDLIST_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_UI_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_UI_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_UI_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_XAM_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_XAM_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_XAM_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_KBD_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_KBD_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_KBD_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_XML_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_XML_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_XML_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_XML_NOMERGE_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_XML_NOMERGE_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_XML_NOMERGE_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_CAVES_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_CAVES_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_CAVES_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_SCHEMAS_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_SCHEMAS_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_SCHEMAS_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_THEME_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_THEME_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_THEME_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_SERVICE_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_SERVICE_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_SERVICE_RULE])
+m4trace:configure.ac:1178: -1- _IT_SUBST([INTLTOOL_POLICY_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_POLICY_RULE$])
+m4trace:configure.ac:1178: -1- _AM_SUBST_NOTMAKE([INTLTOOL_POLICY_RULE])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^XGETTEXT$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^MSGMERGE$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^MSGFMT$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^GMSGFMT$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^INTLTOOL_PERL$])
+m4trace:configure.ac:1178: -1- m4_pattern_allow([^ALL_LINGUAS$])
+m4trace:configure.ac:1178: -1- IT_PO_SUBDIR([po])
+m4trace:configure.ac:1180: -1- m4_pattern_allow([^GETTEXT_PACKAGE$])
+m4trace:configure.ac:1182: -1- m4_pattern_allow([^GETTEXT_PACKAGE$])
+m4trace:configure.ac:1185: -1- AM_GLIB_GNU_GETTEXT
+m4trace:configure.ac:1185: -1- GLIB_GNU_GETTEXT([])
+m4trace:configure.ac:1185: -1- _m4_warn([obsolete], [The macro `GLIB_GNU_GETTEXT' is obsolete.
+You should run autoupdate.], [/usr/share/aclocal/glib-gettext.m4:366: GLIB_GNU_GETTEXT is expanded from...
+/usr/share/aclocal/glib-gettext.m4:466: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.ac:1185: the top level])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_LOCALE_H$])
+m4trace:configure.ac:1185: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/general.m4:2698: AC_TRY_LINK is expanded from...
+../../lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../lib/autoconf/general.m4:2042: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2063: AC_CACHE_CHECK is expanded from...
+/usr/share/aclocal/glib-gettext.m4:51: GLIB_LC_MESSAGES is expanded from...
+/usr/share/aclocal/glib-gettext.m4:366: GLIB_GNU_GETTEXT is expanded from...
+/usr/share/aclocal/glib-gettext.m4:466: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.ac:1185: the top level])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_LC_MESSAGES$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^USE_NLS$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_CFPREFERENCESCOPYAPPVALUE$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_CFLOCALECOPYCURRENT$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^INTL_MACOSX_LIBS$])
+m4trace:configure.ac:1185: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/general.m4:2698: AC_TRY_LINK is expanded from...
+../../lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../lib/autoconf/general.m4:2042: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2063: AC_CACHE_CHECK is expanded from...
+../../lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../lib/autoconf/headers.m4:129: _AC_CHECK_HEADER_MONGREL is expanded from...
+../../lib/autoconf/headers.m4:67: AC_CHECK_HEADER is expanded from...
+/usr/share/aclocal/glib-gettext.m4:150: GLIB_WITH_NLS is expanded from...
+/usr/share/aclocal/glib-gettext.m4:366: GLIB_GNU_GETTEXT is expanded from...
+/usr/share/aclocal/glib-gettext.m4:466: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.ac:1185: the top level])
+m4trace:configure.ac:1185: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/general.m4:2698: AC_TRY_LINK is expanded from...
+../../lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../lib/autoconf/general.m4:2042: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2063: AC_CACHE_CHECK is expanded from...
+../../lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../lib/autoconf/headers.m4:129: _AC_CHECK_HEADER_MONGREL is expanded from...
+../../lib/autoconf/headers.m4:67: AC_CHECK_HEADER is expanded from...
+/usr/share/aclocal/glib-gettext.m4:150: GLIB_WITH_NLS is expanded from...
+/usr/share/aclocal/glib-gettext.m4:366: GLIB_GNU_GETTEXT is expanded from...
+/usr/share/aclocal/glib-gettext.m4:466: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.ac:1185: the top level])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_BIND_TEXTDOMAIN_CODESET$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_BIND_TEXTDOMAIN_CODESET$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_GETTEXT$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^MSGFMT$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^HAVE_DCGETTEXT$])
+m4trace:configure.ac:1185: -1- GLIB_RUN_PROG([$MSGFMT -c -o /dev/null], [
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: test 1.0\n"
+"PO-Revision-Date: 2007-02-15 12:01+0100\n"
+"Last-Translator: test <foo@bar.xx>\n"
+"Language-Team: C <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+], [MSGFMT_OPTS=-c; AC_MSG_RESULT([yes])], [AC_MSG_RESULT([no])])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^MSGFMT_OPTS$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^GMSGFMT$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^XGETTEXT$])
+m4trace:configure.ac:1185: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/general.m4:2698: AC_TRY_LINK is expanded from...
+../../lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../lib/autoconf/headers.m4:129: _AC_CHECK_HEADER_MONGREL is expanded from...
+../../lib/autoconf/headers.m4:67: AC_CHECK_HEADER is expanded from...
+/usr/share/aclocal/glib-gettext.m4:150: GLIB_WITH_NLS is expanded from...
+/usr/share/aclocal/glib-gettext.m4:366: GLIB_GNU_GETTEXT is expanded from...
+/usr/share/aclocal/glib-gettext.m4:466: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.ac:1185: the top level])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^ENABLE_NLS$])
+m4trace:configure.ac:1185: -1- _m4_warn([obsolete], [The macro `AC_OUTPUT_COMMANDS' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/status.m4:1026: AC_OUTPUT_COMMANDS is expanded from...
+/usr/share/aclocal/glib-gettext.m4:150: GLIB_WITH_NLS is expanded from...
+/usr/share/aclocal/glib-gettext.m4:366: GLIB_GNU_GETTEXT is expanded from...
+/usr/share/aclocal/glib-gettext.m4:466: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.ac:1185: the top level])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^CATALOGS$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^CATOBJEXT$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^DATADIRNAME$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^GMOFILES$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^INSTOBJEXT$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^INTLLIBS$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^PO_IN_DATADIR_TRUE$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^PO_IN_DATADIR_FALSE$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^POFILES$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^POSUB$])
+m4trace:configure.ac:1185: -1- m4_pattern_allow([^MKINSTALLDIRS$])
+m4trace:configure.ac:1205: -1- AC_PATH_X_APP_DEFAULTS
+m4trace:configure.ac:1205: -1- AC_PATH_X_APP_DEFAULTS_DIRECT
+m4trace:configure.ac:1328: -1- HANDLE_X_PATH_ARG([with_dpms], [--with-dpms-ext], [DPMS])
+m4trace:configure.ac:1333: -1- AC_CHECK_X_HEADER([X11/extensions/dpms.h], [have_dpms=yes], [], [#include <X11/Xlib.h>
+		     #include <X11/Xmd.h>])
+m4trace:configure.ac:1342: -1- AC_CHECK_X_LIB([Xext], [DPMSInfo], [have_dpms=yes], [true], [-lXext -lX11])
+m4trace:configure.ac:1346: -1- AC_CHECK_X_LIB([Xdpms], [DPMSInfo], [have_dpms=yes; XDPMS_LIBS="-lXdpms"], [true], [-lXext -lX11])
+m4trace:configure.ac:1355: -1- m4_pattern_allow([^HAVE_DPMS_EXTENSION$])
+m4trace:configure.ac:1377: -1- HANDLE_X_PATH_ARG([with_xf86vmode], [--with-xf86vmode-ext], [xf86vmode])
+m4trace:configure.ac:1384: -1- AC_CHECK_X_HEADER([X11/extensions/xf86vmode.h], [have_xf86vmode=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1390: -1- AC_CHECK_X_LIB([Xxf86vm], [XF86VidModeGetViewPort], [have_xf86vmode=yes;
+                   VIDMODE_LIBS="-lXxf86vm";
+                   SAVER_LIBS="$SAVER_LIBS $VIDMODE_LIBS"], [true], [-lXext -lX11])
+m4trace:configure.ac:1399: -1- m4_pattern_allow([^HAVE_XF86VMODE$])
+m4trace:configure.ac:1420: -1- HANDLE_X_PATH_ARG([with_xinerama], [--with-xinerama-ext], [XINERAMA])
+m4trace:configure.ac:1425: -1- AC_CHECK_X_HEADER([X11/extensions/Xinerama.h], [have_xinerama=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1433: -1- AC_CHECK_X_LIB([Xext], [XineramaQueryScreens], [have_xinerama=yes], [true], [-lXext -lX11])
+m4trace:configure.ac:1438: -1- AC_CHECK_X_LIB([Xinerama], [XineramaQueryScreens], [have_xinerama=yes; XINERAMA_LIBS="-lXinerama"], [true], [-lXext -lX11])
+m4trace:configure.ac:1446: -1- m4_pattern_allow([^HAVE_XINERAMA$])
+m4trace:configure.ac:1471: -1- HANDLE_X_PATH_ARG([with_randr], [--with-randr-ext], [RANDR])
+m4trace:configure.ac:1476: -1- AC_CHECK_X_HEADER([X11/extensions/Xrandr.h], [have_randr=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1484: -1- AC_CHECK_X_LIB([Xrender], [XRenderSetSubpixelOrder], [xrender_libs="-lXrender"], [true], [-lXext -lX11])
+m4trace:configure.ac:1489: -1- AC_CHECK_X_LIB([Xext], [XRRGetScreenInfo], [have_randr=yes; SAVER_LIBS="$SAVER_LIBS $xrender_libs"], [true], [$xrender_libs -lXext -lX11])
+m4trace:configure.ac:1495: -1- AC_CHECK_X_LIB([Xrandr], [XRRGetScreenInfo], [have_randr=yes; SAVER_LIBS="$SAVER_LIBS -lXrandr $xrender_libs"], [true], [$xrender_libs -lXext -lX11])
+m4trace:configure.ac:1503: -1- m4_pattern_allow([^HAVE_RANDR$])
+m4trace:configure.ac:1507: -1- AC_TRY_X_COMPILE([#include <stdlib.h>
+                         #include <X11/Xlib.h>
+                         #include <X11/extensions/Xrandr.h>], [XRRScreenResources *res = 
+                           XRRGetScreenResources (0, 0);], [ac_cv_randr_12=yes], [ac_cv_randr_12=no])
+m4trace:configure.ac:1517: -1- m4_pattern_allow([^HAVE_RANDR_12$])
+m4trace:configure.ac:1543: -1- HANDLE_X_PATH_ARG([with_xinput], [--with-xinput-ext], [XINPUT])
+m4trace:configure.ac:1548: -1- AC_CHECK_X_HEADER([X11/extensions/XInput2.h], [have_xinput=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1555: -1- AC_CHECK_X_LIB([Xi], [XISelectEvents], [have_xinput=yes; xinput_halfassed=no;
+                    SAVER_LIBS="$SAVER_LIBS -lXi"], [true], [-lXext -lX11])
+m4trace:configure.ac:1563: -1- m4_pattern_allow([^HAVE_XINPUT$])
+m4trace:configure.ac:1586: -1- HANDLE_X_PATH_ARG([with_xf86gamma], [--with-xf86gamma-ext], [xf86gamma])
+m4trace:configure.ac:1594: -1- AC_CHECK_X_HEADER([X11/extensions/xf86vmode.h], [have_xf86gamma=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1601: -1- AC_CHECK_X_LIB([Xxf86vm], [XF86VidModeSetGamma], [have_xf86gamma=yes], [true], [-lXext -lX11])
+m4trace:configure.ac:1609: -1- AC_CHECK_X_LIB([Xxf86vm], [XF86VidModeSetGammaRamp], [have_xf86gamma_ramp=yes], [true], [-lXext -lX11])
+m4trace:configure.ac:1616: -1- m4_pattern_allow([^HAVE_XF86VMODE_GAMMA$])
+m4trace:configure.ac:1620: -1- m4_pattern_allow([^HAVE_XF86VMODE_GAMMA_RAMP$])
+m4trace:configure.ac:1646: -1- HANDLE_X_PATH_ARG([with_xidle], [--with-xidle-ext], [XIDLE])
+m4trace:configure.ac:1649: -1- AC_CHECK_X_HEADER([X11/extensions/xidle.h], [have_xidle=yes
+                     AC_DEFINE(HAVE_XIDLE_EXTENSION)], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1649: -1- m4_pattern_allow([^HAVE_XIDLE_EXTENSION$])
+m4trace:configure.ac:1674: -1- AC_CHECK_X_HEADER([X11/extensions/scrnsaver.h], [have_mit=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1681: -1- AC_CHECK_X_LIB([Xext], [XScreenSaverRegister], [true], [have_mit=no], [-lm])
+m4trace:configure.ac:1686: -1- AC_CHECK_X_LIB([XExExt], [XScreenSaverRegister], [have_mit=yes; SAVER_LIBS="$SAVER_LIBS -lXExExt"], [true], [-lX11 -lXext -lm])
+m4trace:configure.ac:1696: -1- AC_CHECK_X_LIB([Xss], [XScreenSaverRegister], [have_mit=yes; SAVER_LIBS="$SAVER_LIBS -lXss"], [true], [-lX11 -lXext -lm])
+m4trace:configure.ac:1727: -1- HANDLE_X_PATH_ARG([with_sgi], [--with-sgi-ext], [SGI SCREEN_SAVER])
+m4trace:configure.ac:1730: -1- AC_CHECK_X_HEADER([X11/extensions/XScreenSaver.h], [have_sgi=yes
+                     AC_DEFINE(HAVE_SGI_SAVER_EXTENSION)], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1730: -1- m4_pattern_allow([^HAVE_SGI_SAVER_EXTENSION$])
+m4trace:configure.ac:1753: -1- HANDLE_X_PATH_ARG([with_sgivc], [--with-sgivc-ext], [SGI-VIDEO-CONTROL])
+m4trace:configure.ac:1758: -1- AC_CHECK_X_HEADER([X11/extensions/XSGIvc.h], [have_sgivc=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1764: -1- AC_CHECK_X_LIB([Xsgivc], [XSGIvcQueryGammaMap], [have_sgivc=yes; SAVER_LIBS="$SAVER_LIBS -lXsgivc"], [true], [-lXext -lX11])
+m4trace:configure.ac:1771: -1- m4_pattern_allow([^HAVE_SGI_VC_EXTENSION$])
+m4trace:configure.ac:1793: -1- HANDLE_X_PATH_ARG([with_readdisplay], [--with-readdisplay], [XReadDisplay])
+m4trace:configure.ac:1797: -2- m4_pattern_allow([^HAVE_READ_DISPLAY_EXTENSION$])
+m4trace:configure.ac:1796: -1- AC_CHECK_X_HEADER([X11/extensions/readdisplay.h], [$as_echo "@%:@define HAVE_READ_DISPLAY_EXTENSION 1" >>confdefs.h
+], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1817: -1- HANDLE_X_PATH_ARG([with_xshm], [--with-xshm-ext], [XSHM])
+m4trace:configure.ac:1822: -1- AC_CHECK_X_HEADER([X11/extensions/XShm.h], [have_xshm=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1828: -1- AC_CHECK_X_HEADER([sys/ipc.h], [have_xshm=yes])
+m4trace:configure.ac:1834: -1- AC_CHECK_X_HEADER([sys/shm.h], [have_xshm=yes])
+m4trace:configure.ac:1847: -1- AC_CHECK_X_LIB([XextSam], [XShmQueryExtension], [have_xshm=yes; X_EXTRA_LIBS="$X_EXTRA_LIBS -lXextSam"], [true], [-lX11 -lXext -lm])
+m4trace:configure.ac:1856: -1- m4_pattern_allow([^HAVE_XSHM_EXTENSION$])
+m4trace:configure.ac:1877: -1- HANDLE_X_PATH_ARG([with_xdbe], [--with-xdbe-ext], [DOUBLE-BUFFER])
+m4trace:configure.ac:1881: -1- AC_CHECK_X_HEADER([X11/extensions/Xdbe.h], [have_xdbe=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1884: -1- m4_pattern_allow([^HAVE_DOUBLE_BUFFER_EXTENSION$])
+m4trace:configure.ac:1936: -1- HANDLE_X_PATH_ARG([with_xkb], [--with-xkb-ext], [XKB])
+m4trace:configure.ac:1940: -1- AC_CHECK_X_HEADER([X11/XKBlib.h], [have_xkb=yes], [], [#include <X11/Xlib.h>])
+m4trace:configure.ac:1943: -1- m4_pattern_allow([^HAVE_XKB$])
+m4trace:configure.ac:1959: -1- AC_EGREP_X_HEADER([XHPDisableReset], [X11/XHPlib.h], [AC_DEFINE(HAVE_XHPDISABLERESET)
+                   SAVER_LIBS="-lXhp11 $SAVER_LIBS"
+                   AC_MSG_RESULT(yes)], [AC_MSG_RESULT(no)])
+m4trace:configure.ac:1959: -1- m4_pattern_allow([^HAVE_XHPDISABLERESET$])
+m4trace:configure.ac:2000: -1- m4_pattern_allow([^HAVE_PROC_INTERRUPTS$])
+m4trace:configure.ac:2029: -1- m4_pattern_allow([^HAVE_PROC_OOM$])
+m4trace:configure.ac:2044: -1- m4_pattern_allow([^HAVE_PROC_OOM$])
+m4trace:configure.ac:2072: -1- HANDLE_X_PATH_ARG([with_systemd], [--with-systemd], [systemd])
+m4trace:configure.ac:2110: -1- AC_CHECK_X_HEADER([systemd/sd-bus.h], [have_systemd=yes])
+m4trace:configure.ac:2120: -1- AC_CHECK_X_LIB([c], [sd_bus_open_system], [have_systemd=yes; systemd_halfassed=no], [], [$ac_systemd_config_libs -lX11 -lXext -lm])
+m4trace:configure.ac:2134: -1- m4_pattern_allow([^HAVE_LIBSYSTEMD$])
+m4trace:configure.ac:2166: -1- m4_pattern_allow([^NO_LOCKING$])
+m4trace:configure.ac:2183: -1- m4_pattern_allow([^ALLOW_ROOT_PASSWD$])
+m4trace:configure.ac:2237: -1- m4_pattern_allow([^PAM_CHECK_ACCOUNT_TYPE$])
+m4trace:configure.ac:2244: -1- HANDLE_X_PATH_ARG([with_pam], [--with-pam], [PAM])
+m4trace:configure.ac:2247: -1- AC_TRY_X_COMPILE([#include <security/pam_appl.h>], [], [ac_cv_pam=yes], [ac_cv_pam=no])
+m4trace:configure.ac:2253: -1- m4_pattern_allow([^HAVE_PAM$])
+m4trace:configure.ac:2254: -1- m4_pattern_allow([^PAM_SERVICE_NAME$])
+m4trace:configure.ac:2264: -1- m4_pattern_allow([^HAVE_SIGTIMEDWAIT$])
+m4trace:configure.ac:2268: -1- m4_pattern_allow([^HAVE_SIGTIMEDWAIT$])
+m4trace:configure.ac:2274: -1- AC_TRY_X_COMPILE([#include <stdio.h>
+                        #include <stdlib.h>
+                        #include <security/pam_appl.h>], [pam_handle_t *pamh = 0;
+                        char *s = pam_strerror(pamh, PAM_SUCCESS);], [ac_pam_strerror_args=2], [AC_TRY_X_COMPILE([#include <stdio.h>
+                                          #include <stdlib.h>
+                                          #include <security/pam_appl.h>],
+                                         [char *s =
+                                           pam_strerror(PAM_SUCCESS);],
+                                         [ac_pam_strerror_args=1],
+                                         [ac_pam_strerror_args=0])])
+m4trace:configure.ac:2274: -1- AC_TRY_X_COMPILE([#include <stdio.h>
+                                          #include <stdlib.h>
+                                          #include <security/pam_appl.h>], [char *s =
+                                           pam_strerror(PAM_SUCCESS);], [ac_pam_strerror_args=1], [ac_pam_strerror_args=0])
+m4trace:configure.ac:2293: -1- m4_pattern_allow([^PAM_STRERROR_TWO_ARGS$])
+m4trace:configure.ac:2316: -1- m4_pattern_allow([^HAVE_PAM_FAIL_DELAY$])
+m4trace:configure.ac:2339: -1- HANDLE_X_PATH_ARG([with_kerberos], [--with-kerberos], [Kerberos])
+m4trace:configure.ac:2342: -1- AC_TRY_X_COMPILE([#include <krb.h>], [], [ac_cv_kerberos=yes], [ac_cv_kerberos=no])
+m4trace:configure.ac:2346: -1- AC_TRY_X_COMPILE([#include <kerberosIV/krb.h>], [], [ac_cv_kerberos5=yes], [ac_cv_kerberos5=no])
+m4trace:configure.ac:2353: -1- m4_pattern_allow([^HAVE_KERBEROS$])
+m4trace:configure.ac:2368: -1- AC_CHECK_X_LIB([krb4], [krb_get_tf_realm], [have_kerberos=yes], [have_kerberos=no])
+m4trace:configure.ac:2373: -1- m4_pattern_allow([^HAVE_KERBEROS$])
+m4trace:configure.ac:2374: -1- m4_pattern_allow([^HAVE_KERBEROS5$])
+m4trace:configure.ac:2389: -1- AC_CHECK_X_LIB([crypt], [crypt], [PASSWD_LIBS="$PASSWD_LIBS -lcrypt"])
+m4trace:configure.ac:2418: -1- HANDLE_X_PATH_ARG([with_shadow], [--with-shadow], [shadow password])
+m4trace:configure.ac:2433: -1- AC_TRY_X_COMPILE([#include <stdlib.h>
+                                    #include <unistd.h>
+                                    #include <sys/types.h>
+                                    #include <sys/label.h>
+                                    #include <sys/audit.h>
+                                    #include <pwdadj.h>], [struct passwd_adjunct *p = getpwanam("nobody");
+                       const char *pw = p->pwa_passwd;], [ac_cv_sun_adjunct=yes], [ac_cv_sun_adjunct=no])
+m4trace:configure.ac:2459: -1- AC_TRY_X_COMPILE([#include <stdlib.h>
+                                    #include <unistd.h>
+                                    #include <sys/types.h>
+                                    #include <pwd.h>
+                                    #include <sys/security.h>
+                                    #include <prot.h>], [struct pr_passwd *p;
+                       const char *pw;
+                       set_auth_parameters(0, 0);
+                       check_auth_parameters();
+                       p = getprpwnam("nobody");
+                       pw = p->ufld.fd_encrypt;], [ac_cv_enhanced_passwd=yes], [ac_cv_enhanced_passwd=no])
+m4trace:configure.ac:2498: -1- AC_TRY_X_COMPILE([#include <stdlib.h>
+                                    #include <unistd.h>
+                                    #include <sys/types.h>
+                                    #include <pwd.h>
+                                    #include <hpsecurity.h>
+                                    #include <prot.h>], [struct s_passwd *p = getspwnam("nobody");
+                       const char *pw = p->pw_passwd;], [ac_cv_hpux_passwd=yes], [ac_cv_hpux_passwd=no])
+m4trace:configure.ac:2553: -1- AC_TRY_X_COMPILE([#include <stdlib.h>
+                                    #include <unistd.h>
+                                    #include <sys/types.h>
+                                    #include <pwd.h>], [struct spwd *p = getspnam_shadow("nobody");
+                       const char *pw = p->pw_passwd;], [ac_cv_pwnam_shadow=yes], [ac_cv_pwnam_shadow=no])
+m4trace:configure.ac:2580: -1- AC_TRY_X_COMPILE([#include <stdlib.h>
+                                    #include <unistd.h>
+                                    #include <sys/types.h>
+                                    #include <pwd.h>
+                                    #include <shadow.h>], [struct spwd *p = getspnam("nobody");
+                       const char *pw = p->sp_pwdp;], [ac_cv_shadow=yes], [ac_cv_shadow=no])
+m4trace:configure.ac:2682: -1- m4_pattern_allow([^HAVE_ADJUNCT_PASSWD$])
+m4trace:configure.ac:2684: -1- m4_pattern_allow([^HAVE_ENHANCED_PASSWD$])
+m4trace:configure.ac:2686: -1- m4_pattern_allow([^HAVE_HPUX_PASSWD$])
+m4trace:configure.ac:2688: -1- m4_pattern_allow([^HAVE_SHADOW_PASSWD$])
+m4trace:configure.ac:2690: -1- m4_pattern_allow([^HAVE_PWNAM_SHADOW_PASSWD$])
+m4trace:configure.ac:2722: -1- HANDLE_X_PATH_ARG([with_gtk], [--with-gtk], [Gtk])
+m4trace:configure.ac:2769: -1- m4_pattern_allow([^HAVE_GTK$])
+m4trace:configure.ac:2770: -1- m4_pattern_allow([^HAVE_GTK2$])
+m4trace:configure.ac:2771: -1- m4_pattern_allow([^HAVE_XML$])
+m4trace:configure.ac:2780: -1- m4_pattern_allow([^gnome_open_program$])
+m4trace:configure.ac:2781: -1- m4_pattern_allow([^gnome_url_show_program$])
+m4trace:configure.ac:2797: -1- HANDLE_X_PATH_ARG([with_motif], [--with-motif], [Motif])
+m4trace:configure.ac:2806: -1- AC_CHECK_X_HEADER([Xm/Xm.h], [have_motif=yes
+                     AC_DEFINE(HAVE_MOTIF)
+                     MOTIF_LIBS="$MOTIF_LIBS -lXm"], [], [#include <stdlib.h>
+                     #include <stdio.h>
+                     #include <X11/Intrinsic.h>])
+m4trace:configure.ac:2806: -1- m4_pattern_allow([^HAVE_MOTIF$])
+m4trace:configure.ac:2817: -1- AC_CHECK_X_HEADER([Xm/ComboBox.h], [AC_DEFINE(HAVE_XMCOMBOBOX)], [], [#include <stdlib.h>
+                     #include <stdio.h>
+                     #include <X11/Intrinsic.h>])
+m4trace:configure.ac:2817: -1- m4_pattern_allow([^HAVE_XMCOMBOBOX$])
+m4trace:configure.ac:2832: -1- AC_TRY_X_COMPILE([#include <Xm/Xm.h>], [long vers = LesstifVersion;], [ac_cv_have_lesstif=yes], [ac_cv_have_lesstif=no])
+m4trace:configure.ac:2848: -1- AC_TRY_X_RUN([#include <stdio.h>
+                     #include <Xm/Xm.h>
+                     int main() {
+                       FILE *f = fopen("conftest-lt", "w");
+                       if (!f) exit(1);
+                       fprintf(f, "%d %d.%d\n", LesstifVersion,
+                          LESSTIF_VERSION, LESSTIF_REVISION);
+                       fclose(f);
+                       exit(0);
+                     }], [ltv=`cat conftest-lt`
+                     ac_cv_lesstif_version=`echo $ltv | sed 's/ .*//'`
+                     ac_cv_lesstif_version_string=`echo $ltv | sed 's/.* //'`], [ac_cv_lesstif_version=unknown
+                     ac_cv_lesstif_version_string=unknown], [ac_cv_lesstif_version=unknown
+                     ac_cv_lesstif_version_string=unknown])
+m4trace:configure.ac:2877: -1- AC_TRY_X_RUN([#include <stdio.h>
+                     #include <Xm/Xm.h>
+                     int main() {
+                       FILE *f = fopen("conftest-mt", "w");
+                       if (!f) exit(1);
+                       fprintf(f, "%d %d.%d\n", XmVersion,
+                          XmVERSION, XmREVISION);
+                       fclose(f);
+                       exit(0);
+                     }], [mtv=`cat conftest-mt`
+                     ac_cv_motif_version=`echo $mtv | sed 's/ .*//'`
+                     ac_cv_motif_version_string=`echo $mtv | sed 's/.* //'`], [ac_cv_motif_version=unknown
+                     ac_cv_motif_version_string=unknown], [ac_cv_motif_version=unknown
+                     ac_cv_motif_version_string=unknown])
+m4trace:configure.ac:2916: -1- AC_CHECK_X_LIB([Xp], [XpQueryExtension], [have_xp_ext=yes; MOTIF_LIBS="$MOTIF_LIBS -lXp"], [true], [-lX11 -lXext -lm])
+m4trace:configure.ac:2930: -1- AC_CHECK_X_LIB([Xintl], [_Xsetlocale], [have_xintl=yes], [have_xintl=no], [-lX11 -lXext -lm])
+m4trace:configure.ac:2976: -1- m4_pattern_allow([^login_manager_tmp$])
+m4trace:configure.ac:2985: -1- m4_pattern_allow([^login_manager_tmp$])
+m4trace:configure.ac:2994: -1- m4_pattern_allow([^login_manager_tmp$])
+m4trace:configure.ac:3003: -1- m4_pattern_allow([^login_manager_tmp$])
+m4trace:configure.ac:3232: -1- m4_include([ax_pthread.m4])
+m4trace:ax_pthread.m4:92: -1- AU_DEFUN([ACX_PTHREAD], [m4_if($#, 0, [AX_PTHREAD], [AX_PTHREAD($@)])])
+m4trace:ax_pthread.m4:92: -1- AC_DEFUN([ACX_PTHREAD], [AC_DIAGNOSE([obsolete], [The macro `ACX_PTHREAD' is obsolete.
+You should run autoupdate.])dnl
+m4_if($#, 0, [AX_PTHREAD], [AX_PTHREAD($@)])])
+m4trace:ax_pthread.m4:93: -1- AC_DEFUN([AX_PTHREAD], [
+AC_REQUIRE([AC_CANONICAL_TARGET])
+AC_REQUIRE([AC_PROG_CC])
+AC_REQUIRE([AC_PROG_SED])
+AC_LANG_PUSH([C])
+ax_pthread_ok=no
+
+# We used to check for pthread.h first, but this fails if pthread.h
+# requires special compiler flags (e.g. on Tru64 or Sequent).
+# It gets checked for in the link test anyway.
+
+# First of all, check if the user has set any of the PTHREAD_LIBS,
+# etcetera environment variables, and if threads linking works using
+# them:
+if test "x$PTHREAD_CFLAGS$PTHREAD_LIBS" != "x"; then
+        ax_pthread_save_CC="$CC"
+        ax_pthread_save_CFLAGS="$CFLAGS"
+        ax_pthread_save_LIBS="$LIBS"
+        AS_IF([test "x$PTHREAD_CC" != "x"], [CC="$PTHREAD_CC"])
+        AS_IF([test "x$PTHREAD_CXX" != "x"], [CXX="$PTHREAD_CXX"])
+        CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+        LIBS="$PTHREAD_LIBS $LIBS"
+        AC_MSG_CHECKING([for pthread_join using $CC $PTHREAD_CFLAGS $PTHREAD_LIBS])
+        AC_LINK_IFELSE([AC_LANG_CALL([], [pthread_join])], [ax_pthread_ok=yes])
+        AC_MSG_RESULT([$ax_pthread_ok])
+        if test "x$ax_pthread_ok" = "xno"; then
+                PTHREAD_LIBS=""
+                PTHREAD_CFLAGS=""
+        fi
+        CC="$ax_pthread_save_CC"
+        CFLAGS="$ax_pthread_save_CFLAGS"
+        LIBS="$ax_pthread_save_LIBS"
+fi
+
+# We must check for the threads library under a number of different
+# names; the ordering is very important because some systems
+# (e.g. DEC) have both -lpthread and -lpthreads, where one of the
+# libraries is broken (non-POSIX).
+
+# Create a list of thread flags to try. Items with a "," contain both
+# C compiler flags (before ",") and linker flags (after ","). Other items
+# starting with a "-" are C compiler flags, and remaining items are
+# library names, except for "none" which indicates that we try without
+# any flags at all, and "pthread-config" which is a program returning
+# the flags for the Pth emulation library.
+
+ax_pthread_flags="pthreads none -Kthread -pthread -pthreads -mthreads pthread --thread-safe -mt pthread-config"
+
+# The ordering *is* (sometimes) important.  Some notes on the
+# individual items follow:
+
+# pthreads: AIX (must check this before -lpthread)
+# none: in case threads are in libc; should be tried before -Kthread and
+#       other compiler flags to prevent continual compiler warnings
+# -Kthread: Sequent (threads in libc, but -Kthread needed for pthread.h)
+# -pthread: Linux/gcc (kernel threads), BSD/gcc (userland threads), Tru64
+#           (Note: HP C rejects this with "bad form for `-t' option")
+# -pthreads: Solaris/gcc (Note: HP C also rejects)
+# -mt: Sun Workshop C (may only link SunOS threads [-lthread], but it
+#      doesn't hurt to check since this sometimes defines pthreads and
+#      -D_REENTRANT too), HP C (must be checked before -lpthread, which
+#      is present but should not be used directly; and before -mthreads,
+#      because the compiler interprets this as "-mt" + "-hreads")
+# -mthreads: Mingw32/gcc, Lynx/gcc
+# pthread: Linux, etcetera
+# --thread-safe: KAI C++
+# pthread-config: use pthread-config program (for GNU Pth library)
+
+case $target_os in
+
+        freebsd*)
+
+        # -kthread: FreeBSD kernel threads (preferred to -pthread since SMP-able)
+        # lthread: LinuxThreads port on FreeBSD (also preferred to -pthread)
+
+        ax_pthread_flags="-kthread lthread $ax_pthread_flags"
+        ;;
+
+        hpux*)
+
+        # From the cc(1) man page: "[-mt] Sets various -D flags to enable
+        # multi-threading and also sets -lpthread."
+
+        ax_pthread_flags="-mt -pthread pthread $ax_pthread_flags"
+        ;;
+
+        openedition*)
+
+        # IBM z/OS requires a feature-test macro to be defined in order to
+        # enable POSIX threads at all, so give the user a hint if this is
+        # not set. (We don't define these ourselves, as they can affect
+        # other portions of the system API in unpredictable ways.)
+
+        AC_EGREP_CPP([AX_PTHREAD_ZOS_MISSING],
+            [
+#            if !defined(_OPEN_THREADS) && !defined(_UNIX03_THREADS)
+             AX_PTHREAD_ZOS_MISSING
+#            endif
+            ],
+            [AC_MSG_WARN([IBM z/OS requires -D_OPEN_THREADS or -D_UNIX03_THREADS to enable pthreads support.])])
+        ;;
+
+        solaris*)
+
+        # On Solaris (at least, for some versions), libc contains stubbed
+        # (non-functional) versions of the pthreads routines, so link-based
+        # tests will erroneously succeed. (N.B.: The stubs are missing
+        # pthread_cleanup_push, or rather a function called by this macro,
+        # so we could check for that, but who knows whether they'll stub
+        # that too in a future libc.)  So we'll check first for the
+        # standard Solaris way of linking pthreads (-mt -lpthread).
+
+        ax_pthread_flags="-mt,-lpthread pthread $ax_pthread_flags"
+        ;;
+esac
+
+# Are we compiling with Clang?
+
+AC_CACHE_CHECK([whether $CC is Clang],
+    [ax_cv_PTHREAD_CLANG],
+    [ax_cv_PTHREAD_CLANG=no
+     # Note that Autoconf sets GCC=yes for Clang as well as GCC
+     if test "x$GCC" = "xyes"; then
+        AC_EGREP_CPP([AX_PTHREAD_CC_IS_CLANG],
+            [/* Note: Clang 2.7 lacks __clang_[a-z]+__ */
+#            if defined(__clang__) && defined(__llvm__)
+             AX_PTHREAD_CC_IS_CLANG
+#            endif
+            ],
+            [ax_cv_PTHREAD_CLANG=yes])
+     fi
+    ])
+ax_pthread_clang="$ax_cv_PTHREAD_CLANG"
+
+
+# GCC generally uses -pthread, or -pthreads on some platforms (e.g. SPARC)
+
+# Note that for GCC and Clang -pthread generally implies -lpthread,
+# except when -nostdlib is passed.
+# This is problematic using libtool to build C++ shared libraries with pthread:
+# [1] https://gcc.gnu.org/bugzilla/show_bug.cgi?id=25460
+# [2] https://bugzilla.redhat.com/show_bug.cgi?id=661333
+# [3] https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=468555
+# To solve this, first try -pthread together with -lpthread for GCC
+
+AS_IF([test "x$GCC" = "xyes"],
+      [ax_pthread_flags="-pthread,-lpthread -pthread -pthreads $ax_pthread_flags"])
+
+# Clang takes -pthread (never supported any other flag), but we'll try with -lpthread first
+
+AS_IF([test "x$ax_pthread_clang" = "xyes"],
+      [ax_pthread_flags="-pthread,-lpthread -pthread"])
+
+
+# The presence of a feature test macro requesting re-entrant function
+# definitions is, on some systems, a strong hint that pthreads support is
+# correctly enabled
+
+case $target_os in
+        darwin* | hpux* | linux* | osf* | solaris*)
+        ax_pthread_check_macro="_REENTRANT"
+        ;;
+
+        aix*)
+        ax_pthread_check_macro="_THREAD_SAFE"
+        ;;
+
+        *)
+        ax_pthread_check_macro="--"
+        ;;
+esac
+AS_IF([test "x$ax_pthread_check_macro" = "x--"],
+      [ax_pthread_check_cond=0],
+      [ax_pthread_check_cond="!defined($ax_pthread_check_macro)"])
+
+
+if test "x$ax_pthread_ok" = "xno"; then
+for ax_pthread_try_flag in $ax_pthread_flags; do
+
+        case $ax_pthread_try_flag in
+                none)
+                AC_MSG_CHECKING([whether pthreads work without any flags])
+                ;;
+
+                *,*)
+                PTHREAD_CFLAGS=`echo $ax_pthread_try_flag | sed "s/^\(.*\),\(.*\)$/\1/"`
+                PTHREAD_LIBS=`echo $ax_pthread_try_flag | sed "s/^\(.*\),\(.*\)$/\2/"`
+                AC_MSG_CHECKING([whether pthreads work with "$PTHREAD_CFLAGS" and "$PTHREAD_LIBS"])
+                ;;
+
+                -*)
+                AC_MSG_CHECKING([whether pthreads work with $ax_pthread_try_flag])
+                PTHREAD_CFLAGS="$ax_pthread_try_flag"
+                ;;
+
+                pthread-config)
+                AC_CHECK_PROG([ax_pthread_config], [pthread-config], [yes], [no])
+                AS_IF([test "x$ax_pthread_config" = "xno"], [continue])
+                PTHREAD_CFLAGS="`pthread-config --cflags`"
+                PTHREAD_LIBS="`pthread-config --ldflags` `pthread-config --libs`"
+                ;;
+
+                *)
+                AC_MSG_CHECKING([for the pthreads library -l$ax_pthread_try_flag])
+                PTHREAD_LIBS="-l$ax_pthread_try_flag"
+                ;;
+        esac
+
+        ax_pthread_save_CFLAGS="$CFLAGS"
+        ax_pthread_save_LIBS="$LIBS"
+        CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+        LIBS="$PTHREAD_LIBS $LIBS"
+
+        # Check for various functions.  We must include pthread.h,
+        # since some functions may be macros.  (On the Sequent, we
+        # need a special flag -Kthread to make this header compile.)
+        # We check for pthread_join because it is in -lpthread on IRIX
+        # while pthread_create is in libc.  We check for pthread_attr_init
+        # due to DEC craziness with -lpthreads.  We check for
+        # pthread_cleanup_push because it is one of the few pthread
+        # functions on Solaris that doesn't have a non-functional libc stub.
+        # We try pthread_create on general principles.
+
+        AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <pthread.h>
+#                       if $ax_pthread_check_cond
+#                        error "$ax_pthread_check_macro must be defined"
+#                       endif
+                        static void *some_global = NULL;
+                        static void routine(void *a)
+                          {
+                             /* To avoid any unused-parameter or
+                                unused-but-set-parameter warning.  */
+                             some_global = a;
+                          }
+                        static void *start_routine(void *a) { return a; }],
+                       [pthread_t th; pthread_attr_t attr;
+                        pthread_create(&th, 0, start_routine, 0);
+                        pthread_join(th, 0);
+                        pthread_attr_init(&attr);
+                        pthread_cleanup_push(routine, 0);
+                        pthread_cleanup_pop(0) /* ; */])],
+            [ax_pthread_ok=yes],
+            [])
+
+        CFLAGS="$ax_pthread_save_CFLAGS"
+        LIBS="$ax_pthread_save_LIBS"
+
+        AC_MSG_RESULT([$ax_pthread_ok])
+        AS_IF([test "x$ax_pthread_ok" = "xyes"], [break])
+
+        PTHREAD_LIBS=""
+        PTHREAD_CFLAGS=""
+done
+fi
+
+
+# Clang needs special handling, because older versions handle the -pthread
+# option in a rather... idiosyncratic way
+
+if test "x$ax_pthread_clang" = "xyes"; then
+
+        # Clang takes -pthread; it has never supported any other flag
+
+        # (Note 1: This will need to be revisited if a system that Clang
+        # supports has POSIX threads in a separate library.  This tends not
+        # to be the way of modern systems, but it's conceivable.)
+
+        # (Note 2: On some systems, notably Darwin, -pthread is not needed
+        # to get POSIX threads support; the API is always present and
+        # active.  We could reasonably leave PTHREAD_CFLAGS empty.  But
+        # -pthread does define _REENTRANT, and while the Darwin headers
+        # ignore this macro, third-party headers might not.)
+
+        # However, older versions of Clang make a point of warning the user
+        # that, in an invocation where only linking and no compilation is
+        # taking place, the -pthread option has no effect ("argument unused
+        # during compilation").  They expect -pthread to be passed in only
+        # when source code is being compiled.
+        #
+        # Problem is, this is at odds with the way Automake and most other
+        # C build frameworks function, which is that the same flags used in
+        # compilation (CFLAGS) are also used in linking.  Many systems
+        # supported by AX_PTHREAD require exactly this for POSIX threads
+        # support, and in fact it is often not straightforward to specify a
+        # flag that is used only in the compilation phase and not in
+        # linking.  Such a scenario is extremely rare in practice.
+        #
+        # Even though use of the -pthread flag in linking would only print
+        # a warning, this can be a nuisance for well-run software projects
+        # that build with -Werror.  So if the active version of Clang has
+        # this misfeature, we search for an option to squash it.
+
+        AC_CACHE_CHECK([whether Clang needs flag to prevent "argument unused" warning when linking with -pthread],
+            [ax_cv_PTHREAD_CLANG_NO_WARN_FLAG],
+            [ax_cv_PTHREAD_CLANG_NO_WARN_FLAG=unknown
+             # Create an alternate version of $ac_link that compiles and
+             # links in two steps (.c -> .o, .o -> exe) instead of one
+             # (.c -> exe), because the warning occurs only in the second
+             # step
+             ax_pthread_save_ac_link="$ac_link"
+             ax_pthread_sed='s/conftest\.\$ac_ext/conftest.$ac_objext/g'
+             ax_pthread_link_step=`AS_ECHO(["$ac_link"]) | sed "$ax_pthread_sed"`
+             ax_pthread_2step_ac_link="($ac_compile) && (echo ==== >&5) && ($ax_pthread_link_step)"
+             ax_pthread_save_CFLAGS="$CFLAGS"
+             for ax_pthread_try in '' -Qunused-arguments -Wno-unused-command-line-argument unknown; do
+                AS_IF([test "x$ax_pthread_try" = "xunknown"], [break])
+                CFLAGS="-Werror -Wunknown-warning-option $ax_pthread_try -pthread $ax_pthread_save_CFLAGS"
+                ac_link="$ax_pthread_save_ac_link"
+                AC_LINK_IFELSE([AC_LANG_SOURCE([[int main(void){return 0;}]])],
+                    [ac_link="$ax_pthread_2step_ac_link"
+                     AC_LINK_IFELSE([AC_LANG_SOURCE([[int main(void){return 0;}]])],
+                         [break])
+                    ])
+             done
+             ac_link="$ax_pthread_save_ac_link"
+             CFLAGS="$ax_pthread_save_CFLAGS"
+             AS_IF([test "x$ax_pthread_try" = "x"], [ax_pthread_try=no])
+             ax_cv_PTHREAD_CLANG_NO_WARN_FLAG="$ax_pthread_try"
+            ])
+
+        case "$ax_cv_PTHREAD_CLANG_NO_WARN_FLAG" in
+                no | unknown) ;;
+                *) PTHREAD_CFLAGS="$ax_cv_PTHREAD_CLANG_NO_WARN_FLAG $PTHREAD_CFLAGS" ;;
+        esac
+
+fi # $ax_pthread_clang = yes
+
+
+
+# Various other checks:
+if test "x$ax_pthread_ok" = "xyes"; then
+        ax_pthread_save_CFLAGS="$CFLAGS"
+        ax_pthread_save_LIBS="$LIBS"
+        CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+        LIBS="$PTHREAD_LIBS $LIBS"
+
+        # Detect AIX lossage: JOINABLE attribute is called UNDETACHED.
+        AC_CACHE_CHECK([for joinable pthread attribute],
+            [ax_cv_PTHREAD_JOINABLE_ATTR],
+            [ax_cv_PTHREAD_JOINABLE_ATTR=unknown
+             for ax_pthread_attr in PTHREAD_CREATE_JOINABLE PTHREAD_CREATE_UNDETACHED; do
+                 AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <pthread.h>],
+                                                 [int attr = $ax_pthread_attr; return attr /* ; */])],
+                                [ax_cv_PTHREAD_JOINABLE_ATTR=$ax_pthread_attr; break],
+                                [])
+             done
+            ])
+        AS_IF([test "x$ax_cv_PTHREAD_JOINABLE_ATTR" != "xunknown" && \
+               test "x$ax_cv_PTHREAD_JOINABLE_ATTR" != "xPTHREAD_CREATE_JOINABLE" && \
+               test "x$ax_pthread_joinable_attr_defined" != "xyes"],
+              [AC_DEFINE_UNQUOTED([PTHREAD_CREATE_JOINABLE],
+                                  [$ax_cv_PTHREAD_JOINABLE_ATTR],
+                                  [Define to necessary symbol if this constant
+                                   uses a non-standard name on your system.])
+               ax_pthread_joinable_attr_defined=yes
+              ])
+
+        AC_CACHE_CHECK([whether more special flags are required for pthreads],
+            [ax_cv_PTHREAD_SPECIAL_FLAGS],
+            [ax_cv_PTHREAD_SPECIAL_FLAGS=no
+             case $target_os in
+             solaris*)
+             ax_cv_PTHREAD_SPECIAL_FLAGS="-D_POSIX_PTHREAD_SEMANTICS"
+             ;;
+             esac
+            ])
+        AS_IF([test "x$ax_cv_PTHREAD_SPECIAL_FLAGS" != "xno" && \
+               test "x$ax_pthread_special_flags_added" != "xyes"],
+              [PTHREAD_CFLAGS="$ax_cv_PTHREAD_SPECIAL_FLAGS $PTHREAD_CFLAGS"
+               ax_pthread_special_flags_added=yes])
+
+        AC_CACHE_CHECK([for PTHREAD_PRIO_INHERIT],
+            [ax_cv_PTHREAD_PRIO_INHERIT],
+            [AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <pthread.h>]],
+                                             [[int i = PTHREAD_PRIO_INHERIT;
+                                               return i;]])],
+                            [ax_cv_PTHREAD_PRIO_INHERIT=yes],
+                            [ax_cv_PTHREAD_PRIO_INHERIT=no])
+            ])
+        AS_IF([test "x$ax_cv_PTHREAD_PRIO_INHERIT" = "xyes" && \
+               test "x$ax_pthread_prio_inherit_defined" != "xyes"],
+              [AC_DEFINE([HAVE_PTHREAD_PRIO_INHERIT], [1], [Have PTHREAD_PRIO_INHERIT.])
+               ax_pthread_prio_inherit_defined=yes
+              ])
+
+        CFLAGS="$ax_pthread_save_CFLAGS"
+        LIBS="$ax_pthread_save_LIBS"
+
+        # More AIX lossage: compile with *_r variant
+        if test "x$GCC" != "xyes"; then
+            case $target_os in
+                aix*)
+                AS_CASE(["x/$CC"],
+                    [x*/c89|x*/c89_128|x*/c99|x*/c99_128|x*/cc|x*/cc128|x*/xlc|x*/xlc_v6|x*/xlc128|x*/xlc128_v6],
+                    [#handle absolute path differently from PATH based program lookup
+                     AS_CASE(["x$CC"],
+                         [x/*],
+                         [
+			   AS_IF([AS_EXECUTABLE_P([${CC}_r])],[PTHREAD_CC="${CC}_r"])
+			   AS_IF([test "x${CXX}" != "x"], [AS_IF([AS_EXECUTABLE_P([${CXX}_r])],[PTHREAD_CXX="${CXX}_r"])])
+			 ],
+                         [
+			   AC_CHECK_PROGS([PTHREAD_CC],[${CC}_r],[$CC])
+			   AS_IF([test "x${CXX}" != "x"], [AC_CHECK_PROGS([PTHREAD_CXX],[${CXX}_r],[$CXX])])
+			 ]
+                     )
+                    ])
+                ;;
+            esac
+        fi
+fi
+
+test -n "$PTHREAD_CC" || PTHREAD_CC="$CC"
+test -n "$PTHREAD_CXX" || PTHREAD_CXX="$CXX"
+
+AC_SUBST([PTHREAD_LIBS])
+AC_SUBST([PTHREAD_CFLAGS])
+AC_SUBST([PTHREAD_CC])
+AC_SUBST([PTHREAD_CXX])
+
+# Finally, execute ACTION-IF-FOUND/ACTION-IF-NOT-FOUND:
+if test "x$ax_pthread_ok" = "xyes"; then
+        ifelse([$1],,[AC_DEFINE([HAVE_PTHREAD],[1],[Define if you have POSIX threads libraries and header files.])],[$1])
+        :
+else
+        ax_pthread_ok=no
+        $2
+fi
+AC_LANG_POP
+])
+m4trace:configure.ac:3241: -1- AX_PTHREAD([if test "$CC" = "$PTHREAD_CC" -o -z "$ac_original_cc"; then
+      have_pthread=yes
+    else
+      ac_prog_cc_no_pthread=yes
+    fi
+  ])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^target$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^target_cpu$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^target_vendor$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^target_os$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^SED$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^ax_pthread_config$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_CREATE_JOINABLE$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^HAVE_PTHREAD_PRIO_INHERIT$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_CC$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_CXX$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_LIBS$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_CFLAGS$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_CC$])
+m4trace:configure.ac:3241: -1- m4_pattern_allow([^PTHREAD_CXX$])
+m4trace:configure.ac:3250: -1- m4_pattern_allow([^HAVE_PTHREAD$])
+m4trace:configure.ac:3269: -1- HANDLE_X_PATH_ARG([with_jwzgles], [--with-gles], [JWZGLES])
+m4trace:configure.ac:3302: -1- HANDLE_X_PATH_ARG([with_gl], [--with-gl], [GL])
+m4trace:configure.ac:3313: -1- AC_CHECK_X_HEADER([GL/gl.h], [have_gl=yes], [have_gl=no])
+m4trace:configure.ac:3315: -1- AC_CHECK_X_HEADER([GL/glu.h], [have_gl=yes], [have_gl=no])
+m4trace:configure.ac:3359: -1- AC_CHECK_X_LIB([GLESv3], [glDrawElements], [have_gl=yes
+                      gl_lib_1="GLESv3"
+                      GL_LIBS="-lGLESv3 $GL_LIBS"], [], [$GL_LIBS -lm])
+m4trace:configure.ac:3366: -1- AC_CHECK_X_LIB([GLESv2], [glDrawElements], [have_gl=yes
+                      gl_lib_1="GLESv2"
+                      GL_LIBS="-lGLESv2 $GL_LIBS"], [], [$GL_LIBS -lm])
+m4trace:configure.ac:3373: -1- AC_CHECK_X_LIB([GLESv1_CM], [glDrawElements], [have_gl=yes
+                      gl_lib_1="GLESv1_CM"
+                      GL_LIBS="-lGLESv1_CM $GL_LIBS"], [], [$GL_LIBS -lm])
+m4trace:configure.ac:3382: -1- AC_CHECK_X_LIB([GL], [glEnable], [have_gl=yes
+                      gl_lib_1="GL"
+                      GL_LIBS="-lGL $GL_LIBS"], [], [$GL_LIBS -lm])
+m4trace:configure.ac:3390: -1- AC_CHECK_X_LIB([MesaGL], [glEnable], [have_gl=yes
+                       gl_lib_1="MesaGL"
+                       GL_LIBS="-lMesaGL $GL_LIBS"], [], [$GL_LIBS -lm])
+m4trace:configure.ac:3404: -1- AC_CHECK_X_LIB([$gl_lib_1], [gluBuild2DMipmaps], [], [have_gl=no], [$GL_LIBS -lm])
+m4trace:configure.ac:3408: -1- AC_CHECK_X_LIB([GLU], [gluBuild2DMipmaps], [have_gl=yes
+                      GL_LIBS="-lGLU $GL_LIBS"], [have_gl=no
+                      gl_halfassed=yes], [$GL_LIBS -lm])
+m4trace:configure.ac:3419: -1- m4_pattern_allow([^HAVE_GL$])
+m4trace:configure.ac:3422: -1- AC_CHECK_X_LIB([$gl_lib_1], [glBindTexture], [AC_DEFINE(HAVE_GLBINDTEXTURE)], [true], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3422: -1- m4_pattern_allow([^HAVE_GLBINDTEXTURE$])
+m4trace:configure.ac:3426: -1- AC_CHECK_X_LIB([$gl_lib_1], [glBindBuffer], [AC_DEFINE(HAVE_GLES)], [true], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3426: -1- m4_pattern_allow([^HAVE_GLES$])
+m4trace:configure.ac:3431: -1- AC_CHECK_X_HEADER([GL/glext.h], [have_glext=yes], [have_glext=no], [#include <GL/gl.h>])
+m4trace:configure.ac:3434: -1- AC_CHECK_X_LIB([$gl_lib_1], [glUseProgram], [AC_DEFINE(HAVE_GLSL)
+                      AC_DEFINE(HAVE_GLES2)], [], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3434: -1- m4_pattern_allow([^HAVE_GLSL$])
+m4trace:configure.ac:3434: -1- m4_pattern_allow([^HAVE_GLES2$])
+m4trace:configure.ac:3442: -1- AC_CHECK_X_LIB([$gl_lib_1], [glBlitFramebuffer], [AC_DEFINE(HAVE_GLES3)], [], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3442: -1- m4_pattern_allow([^HAVE_GLES3$])
+m4trace:configure.ac:3448: -1- m4_pattern_allow([^HAVE_JWZGLES$])
+m4trace:configure.ac:3449: -1- m4_pattern_allow([^HAVE_GLES$])
+m4trace:configure.ac:3475: -1- HANDLE_X_PATH_ARG([with_glx], [--with-glx], [GLX])
+m4trace:configure.ac:3478: -1- AC_CHECK_X_HEADER([GLX/glx.h], [have_glx=yes], [have_glx=no])
+m4trace:configure.ac:3487: -1- AC_CHECK_X_LIB([$gl_lib_1], [glXCreateContext], [have_glx=yes], [have_glx=no], [$GL_LIBS -lm])
+m4trace:configure.ac:3494: -1- AC_CHECK_X_LIB([$gl_lib_1], [eglCreatePlatformWindowSurface], [have_egl=yes], [have_egl=no], [$GL_LIBS -lm])
+m4trace:configure.ac:3500: -1- AC_CHECK_X_LIB([EGL], [eglCreatePlatformWindowSurface], [have_egl=yes
+                    egl_lib="EGL"], [have_egl=no], [$GL_LIBS -lm])
+m4trace:configure.ac:3513: -1- m4_pattern_allow([^HAVE_EGL$])
+m4trace:configure.ac:3556: -1- HANDLE_X_PATH_ARG([with_gle], [--with-gle], [GLE])
+m4trace:configure.ac:3564: -1- AC_CHECK_X_HEADER([GL/gle.h], [have_gle3=yes], [have_gle3=no], [#include <GL/gl.h>])
+m4trace:configure.ac:3569: -1- AC_CHECK_X_HEADER([GL/gutil.h], [have_gle=yes], [have_gle=no], [#include <GL/gl.h>])
+m4trace:configure.ac:3572: -1- AC_CHECK_X_HEADER([GL/tube.h], [have_gle=yes], [have_gle=no], [#include <GL/gl.h>])
+m4trace:configure.ac:3580: -1- AC_CHECK_X_LIB([gle], [gleCreateGC], [have_gle=yes; gle_halfassed=no; GLE_LIBS="-lgle"], [], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3601: -1- AC_CHECK_X_LIB([gle], [uview_direction], [have_gle=yes; gle_halfassed=no], [], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3607: -1- AC_CHECK_X_LIB([matrix], [uview_direction_d], [have_gle=yes; gle_halfassed=no;
+                      GLE_LIBS="$GLE_LIBS -lmatrix"], [], [$GL_LIBS -lX11 -lXext -lm])
+m4trace:configure.ac:3615: -1- m4_pattern_allow([^HAVE_GLE$])
+m4trace:configure.ac:3617: -1- m4_pattern_allow([^HAVE_GLE3$])
+m4trace:configure.ac:3642: -1- HANDLE_X_PATH_ARG([with_jpeg], [--with-jpeg], [JPEG])
+m4trace:configure.ac:3652: -1- AC_CHECK_X_HEADER([jpeglib.h], [have_jpeg=yes])
+m4trace:configure.ac:3658: -1- AC_CHECK_X_LIB([jpeg], [jpeg_start_compress], [have_jpeg=yes
+                    jpeg_halfassed=no
+                    JPEG_LIBS="-ljpeg"
+                    AC_DEFINE(HAVE_JPEGLIB)])
+m4trace:configure.ac:3658: -1- m4_pattern_allow([^HAVE_JPEGLIB$])
+m4trace:configure.ac:3681: -1- HANDLE_X_PATH_ARG([with_png], [--with-png], [PNG])
+m4trace:configure.ac:3691: -1- AC_CHECK_X_HEADER([png.h], [have_png=yes])
+m4trace:configure.ac:3697: -1- AC_CHECK_X_LIB([png], [png_create_read_struct], [have_png=yes
+                    png_halfassed=no
+                    PNG_LIBS="-lpng"
+                    AC_DEFINE(HAVE_LIBPNG)])
+m4trace:configure.ac:3697: -1- m4_pattern_allow([^HAVE_LIBPNG$])
+m4trace:configure.ac:3735: -1- HANDLE_X_PATH_ARG([with_gdk_pixbuf], [--with-pixbuf], [GDK_PIXBUF])
+m4trace:configure.ac:3774: -1- AC_CHECK_X_HEADER([gdk-pixbuf/gdk-pixbuf.h], [have_gdk_pixbuf=yes])
+m4trace:configure.ac:3780: -1- AC_CHECK_X_HEADER([gdk-pixbuf/gdk-pixbuf-xlib.h], [have_gdk_pixbuf=yes
+                         gdk_pixbuf_halfassed=no])
+m4trace:configure.ac:3788: -1- AC_CHECK_X_HEADER([gdk-pixbuf-xlib/gdk-pixbuf-xlib.h], [have_gdk_pixbuf=yes
+                           gdk_pixbuf_halfassed=no])
+m4trace:configure.ac:3804: -1- AC_CHECK_X_LIB([c], [gdk_pixbuf_new_from_file], [have_gdk_pixbuf=yes], [], [$ac_gdk_pixbuf_config_libs -lX11 -lXext -lm])
+m4trace:configure.ac:3809: -1- AC_CHECK_X_LIB([c], [gdk_pixbuf_xlib_init], [have_gdk_pixbuf=yes
+                      gdk_pixbuf_halfassed=no], [], [$ac_gdk_pixbuf_config_libs -lX11 -lXext -lm])
+m4trace:configure.ac:3819: -1- m4_pattern_allow([^HAVE_GDK_PIXBUF$])
+m4trace:configure.ac:3825: -1- AC_CHECK_X_LIB([c], [gdk_pixbuf_apply_embedded_orientation], [AC_DEFINE(HAVE_GDK_PIXBUF_APPLY_EMBEDDED_ORIENTATION)], [], [$ac_gdk_pixbuf_config_libs -lX11 -lXext -lm])
+m4trace:configure.ac:3825: -1- m4_pattern_allow([^HAVE_GDK_PIXBUF_APPLY_EMBEDDED_ORIENTATION$])
+m4trace:configure.ac:3839: -1- AC_CHECK_X_LIB([X11], [Xutf8DrawString], [have_xutf8drawstring=yes], [true], [-lX11 -lXext -lm])
+m4trace:configure.ac:3843: -1- m4_pattern_allow([^HAVE_XUTF8DRAWSTRING$])
+m4trace:configure.ac:3856: -1- HANDLE_X_PATH_ARG([with_xft], [--with-xft], [Xft])
+m4trace:configure.ac:3888: -1- AC_CHECK_X_HEADER([X11/Xft/Xft.h], [have_xft=yes])
+m4trace:configure.ac:3899: -1- AC_CHECK_X_LIB([c], [XftDrawStringUtf8], [have_xft=yes], [], [$ac_xft_config_libs -lX11 -lXext -lm])
+m4trace:configure.ac:3913: -1- m4_pattern_allow([^HAVE_XFT$])
+m4trace:configure.ac:3930: -1- AC_CHECK_X_LIB([util], [forkpty], [PTY_LIBS="-lutil"
+                ac_have_forkpty=yes
+                AC_DEFINE(HAVE_FORKPTY)])
+m4trace:configure.ac:3930: -1- m4_pattern_allow([^HAVE_FORKPTY$])
+m4trace:configure.ac:3937: -1- AC_CHECK_X_LIB([c], [forkpty], [PTY_LIBS=""
+                  AC_DEFINE(HAVE_FORKPTY)])
+m4trace:configure.ac:3937: -1- m4_pattern_allow([^HAVE_FORKPTY$])
+m4trace:configure.ac:4002: -1- HANDLE_X_PATH_ARG([setuid_hacks], [--with-setuid-hacks], [setuid hacks])
+m4trace:configure.ac:4024: -1- HANDLE_X_PATH_ARG([record_anim], [--with-record-animation], [record animation])
+m4trace:configure.ac:4038: -1- m4_pattern_allow([^HAVE_RECORD_ANIM$])
+m4trace:configure.ac:4222: -1- m4_pattern_allow([^INCLUDES$])
+m4trace:configure.ac:4224: -1- m4_pattern_allow([^PREFERRED_DEMO_PROGRAM$])
+m4trace:configure.ac:4225: -1- m4_pattern_allow([^ALL_DEMO_PROGRAMS$])
+m4trace:configure.ac:4226: -1- m4_pattern_allow([^SAVER_LIBS$])
+m4trace:configure.ac:4227: -1- m4_pattern_allow([^MOTIF_LIBS$])
+m4trace:configure.ac:4228: -1- m4_pattern_allow([^GTK_LIBS$])
+m4trace:configure.ac:4229: -1- m4_pattern_allow([^XML_LIBS$])
+m4trace:configure.ac:4230: -1- m4_pattern_allow([^PNG_LIBS$])
+m4trace:configure.ac:4231: -1- m4_pattern_allow([^JPEG_LIBS$])
+m4trace:configure.ac:4232: -1- m4_pattern_allow([^HACK_LIBS$])
+m4trace:configure.ac:4233: -1- m4_pattern_allow([^PTY_LIBS$])
+m4trace:configure.ac:4234: -1- m4_pattern_allow([^GL_LIBS$])
+m4trace:configure.ac:4235: -1- m4_pattern_allow([^GLE_LIBS$])
+m4trace:configure.ac:4236: -1- m4_pattern_allow([^XDPMS_LIBS$])
+m4trace:configure.ac:4237: -1- m4_pattern_allow([^PTHREAD_LIBS$])
+m4trace:configure.ac:4238: -1- m4_pattern_allow([^XINERAMA_LIBS$])
+m4trace:configure.ac:4239: -1- m4_pattern_allow([^PASSWD_LIBS$])
+m4trace:configure.ac:4240: -1- m4_pattern_allow([^LIBCAP_CFLAGS$])
+m4trace:configure.ac:4241: -1- m4_pattern_allow([^LIBCAP_LIBS$])
+m4trace:configure.ac:4242: -1- m4_pattern_allow([^PROG_SETCAP$])
+m4trace:configure.ac:4243: -1- m4_pattern_allow([^SETUID_AUTH$])
+m4trace:configure.ac:4244: -1- m4_pattern_allow([^SETUID_HACKS$])
+m4trace:configure.ac:4245: -1- m4_pattern_allow([^SETCAP_HACKS$])
+m4trace:configure.ac:4246: -1- m4_pattern_allow([^INSTALL_DIRS$])
+m4trace:configure.ac:4247: -1- m4_pattern_allow([^INSTALL_PAM$])
+m4trace:configure.ac:4248: -1- m4_pattern_allow([^HAVE_PAM_FAIL_DELAY$])
+m4trace:configure.ac:4249: -1- m4_pattern_allow([^COMMENT_PAM_CHECK_ACCOUNT$])
+m4trace:configure.ac:4250: -1- m4_pattern_allow([^NEW_LOGIN_COMMAND$])
+m4trace:configure.ac:4251: -1- m4_pattern_allow([^NEW_LOGIN_COMMAND_P$])
+m4trace:configure.ac:4252: -1- m4_pattern_allow([^DEFAULT_IMAGES_P$])
+m4trace:configure.ac:4253: -1- m4_pattern_allow([^DEFAULT_IMAGE_DIRECTORY$])
+m4trace:configure.ac:4254: -1- m4_pattern_allow([^DEFAULT_TEXT_FILE$])
+m4trace:configure.ac:4255: -1- m4_pattern_allow([^WITH_BROWSER$])
+m4trace:configure.ac:4257: -1- m4_pattern_allow([^EXES_OSX$])
+m4trace:configure.ac:4258: -1- m4_pattern_allow([^EXES_SYSTEMD$])
+m4trace:configure.ac:4259: -1- m4_pattern_allow([^SYSTEMD_LIBS$])
+m4trace:configure.ac:4260: -1- m4_pattern_allow([^SCRIPTS_OSX$])
+m4trace:configure.ac:4261: -1- m4_pattern_allow([^MEN_OSX$])
+m4trace:configure.ac:4263: -1- m4_pattern_allow([^PASSWD_SRCS$])
+m4trace:configure.ac:4264: -1- m4_pattern_allow([^PASSWD_OBJS$])
+m4trace:configure.ac:4265: -1- m4_pattern_allow([^XFT_SRCS$])
+m4trace:configure.ac:4266: -1- m4_pattern_allow([^XFT_OBJS$])
+m4trace:configure.ac:4267: -1- m4_pattern_allow([^XFT_LIBS$])
+m4trace:configure.ac:4268: -1- m4_pattern_allow([^LOCK_SRCS$])
+m4trace:configure.ac:4269: -1- m4_pattern_allow([^LOCK_OBJS$])
+m4trace:configure.ac:4270: -1- m4_pattern_allow([^JPEG_EXES$])
+m4trace:configure.ac:4271: -1- m4_pattern_allow([^GL_EXES$])
+m4trace:configure.ac:4272: -1- m4_pattern_allow([^RETIRED_GL_EXES$])
+m4trace:configure.ac:4273: -1- m4_pattern_allow([^SUID_EXES$])
+m4trace:configure.ac:4274: -1- m4_pattern_allow([^GL_UTIL_EXES$])
+m4trace:configure.ac:4275: -1- m4_pattern_allow([^GL_MEN$])
+m4trace:configure.ac:4276: -1- m4_pattern_allow([^GL_KLUDGE$])
+m4trace:configure.ac:4277: -1- m4_pattern_allow([^GLE_EXES$])
+m4trace:configure.ac:4278: -1- m4_pattern_allow([^GLE_KLUDGE$])
+m4trace:configure.ac:4279: -1- m4_pattern_allow([^JWZGLES_OBJS$])
+m4trace:configure.ac:4280: -1- m4_pattern_allow([^GNOME24$])
+m4trace:configure.ac:4281: -1- m4_pattern_allow([^GNOME22$])
+m4trace:configure.ac:4282: -1- m4_pattern_allow([^NOGNOME$])
+m4trace:configure.ac:4283: -1- m4_pattern_allow([^HACKDIR$])
+m4trace:configure.ac:4284: -1- m4_pattern_allow([^HACKDIR_FULL$])
+m4trace:configure.ac:4285: -1- m4_pattern_allow([^GTK_DATADIR$])
+m4trace:configure.ac:4286: -1- m4_pattern_allow([^PO_DATADIR$])
+m4trace:configure.ac:4287: -1- m4_pattern_allow([^HACK_CONF_DIR$])
+m4trace:configure.ac:4288: -1- m4_pattern_allow([^FONT_DIR$])
+m4trace:configure.ac:4289: -1- m4_pattern_allow([^ANIM_OBJS$])
+m4trace:configure.ac:4290: -1- m4_pattern_allow([^ANIM_LIBS$])
+m4trace:configure.ac:4293: -1- m4_pattern_allow([^APPDEFAULTS$])
+m4trace:configure.ac:4295: -1- m4_pattern_allow([^DEPEND$])
+m4trace:configure.ac:4296: -1- m4_pattern_allow([^DEPEND_FLAGS$])
+m4trace:configure.ac:4297: -1- m4_pattern_allow([^DEPEND_DEFINES$])
+m4trace:configure.ac:4298: -1- m4_pattern_allow([^PERL$])
+m4trace:configure.ac:4311: -1- m4_pattern_allow([^LIB@&t@OBJS$])
+m4trace:configure.ac:4311: -1- m4_pattern_allow([^LTLIBOBJS$])
