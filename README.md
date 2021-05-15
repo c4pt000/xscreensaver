@@ -1,4 +1,4 @@
-# changes to xscreensaver "SBalls" screensaver -> "Atomic" added PAM support +RPMS +DEBS for fprintd **WIP (buggy fingerprint)
+# changes to xscreensaver "SBall" screensaver -> "Atomic" added PAM support +RPMS +DEBS for fprintd **WIP (buggy fingerprint)
 
 * fedora 34
 
@@ -45,7 +45,7 @@ session    required     pam_limits.so
 session    include      system-auth
 ```
 
-cat /etc/pam.d/system-aut
+cat /etc/pam.d/system-auth
 ```
 # Modified system-auth for multi-factor authentication
 
