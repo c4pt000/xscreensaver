@@ -577,14 +577,14 @@ static void Draw(ModeInfo * mi)
     gltrackball_rotate (sb->trackball);
 
     /* rotate the balls */
-/*    glRotatef(sb->rotm[0], 10.0f, 0.0f, 0.0f); */
-    glRotatef(sb->rotm[0], 0.0f, 1.0f, 0.0f);
-/*   glRotatef(sb->rotm[2], 0.0f, 0.0f, 1.0f); */
+    glRotatef(sb->rotm[0], 1.0f, 0.0f, 0.0f);
+    glRotatef(sb->rotm[1], 0.0f, 1.0f, 0.0f);
+    glRotatef(sb->rotm[2], 0.0f, 0.0f, 1.0f);
 
     if (! sb->button_down_p) {
-      sb->rotm[0] += +sb->speed;
-/*     sb->rotm[1] += +(sb->speed); */
-/*      sb->rotm[2] += 0;        */
+      sb->rotm[0] += sb->speed;
+      sb->rotm[1] += -(sb->speed);
+      sb->rotm[2] += 0;
     }
 
     /* draw the balls */
@@ -627,8 +627,7 @@ static void Init(ModeInfo * mi)
 
     vinit(sb->eye   ,0.0f, 0.0f, 6.0f);
     vinit(sb->rotm  ,0.0f, 0.0f, 0.0f);
-    sb->speed = 15;
-/* MI_CYCLES(mi);  */
+    sb->speed = MI_CYCLES(mi);
 
     /* initialise object number */
     object = object_arg-1;
