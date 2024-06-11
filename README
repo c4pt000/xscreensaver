@@ -26,8 +26,8 @@ To compile for a Unix system with X11:
         ./configure --help
 
         ./configure --prefix=/usr
-        make
-        sudo make install
+        make -j24			# for 24 CPU cores use 8 if you have 8 cores....for faster builds when compiling etc.
+        sudo make -j24 install
         make clean
 
         xscreensaver &
